@@ -8,14 +8,18 @@ Standalone **cTrader Automate (`.NET 6.0`)** quantitative cBot and **zero-lookah
 
 All presets are verified over **9+ years (`2017-09-20` -> `2026-11-23`, `2,307` trading days)** across 12 US Tech/Growth Mega-Cap Leaders (`NVDA, AAPL, MSFT, AMZN, GOOGL, META, AVGO, AMD, TSLA, ORCL, NFLX, COST`) with strict zero-lookahead (`t-1` closed bar -> `t` open fill), gap-aware Stop-Loss slippage, and realistic cTrader Stock CFD costs (`10 bps` round-trip + `7.0%/yr` overnight financing with `3×` Wednesday rollover).
 
-| Profile | Preset (`.cbotset`) | Chart | 10Y Return (`$25k`) | Max Eq DD | Worst Day | Profit Factor | Sharpe / Calmar | OOS (`2022–2026`) | `2×` Stress (`20bps + 10%/yr`) |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Ultra-Safe CFD (`< 5%` DD)** | [`SS_P1_CFD_ULTRA_SAFE_Under6DD.cbotset`](cbot/presets/SS_P1_CFD_ULTRA_SAFE_Under6DD.cbotset) | `US TECH 100, D1` | **`$36,865` (`+47.5%`)** | **`4.87%`** | **`1.76%`** | **`1.77`** | `0.97` / `0.89` | `+14.3%` (`4.87%` DD, `PF 1.52`) | `+37.4%` (`4.98%` DD, `PF 1.61`) |
-| **Balanced CFD (`< 6%` DD)** | [`SS_P2_CFD_BALANCED_Under8DD.cbotset`](cbot/presets/SS_P2_CFD_BALANCED_Under8DD.cbotset) | `US TECH 100, D1` | **`$39,643` (`+58.6%`)** | **`5.54%`** | **`1.94%`** | **`1.73`** | **`1.02`** / `0.93` | `+16.3%` (`5.54%` DD, `PF 1.45`) | `+46.4%` (`6.27%` DD, `PF 1.59`) |
-| **Cash `1.0×` / Low-Swap** | [`SS_P3_CASH_1X_Under8DD.cbotset`](cbot/presets/SS_P3_CASH_1X_Under8DD.cbotset) | `US TECH 100, D1` | **`$52,693` (`+110.8%`)** | **`6.64%`** | `2.49%` | **`2.00`** | **`1.30`** / **`1.28`** | **`+31.3%`** (`6.64%` DD, **`PF 1.70`**) | **`+103.0%`** (`6.82%` DD, **`PF 1.94`**) |
-| **Single-Stock Fallback** | [`SS_P4_SINGLE_STOCK_Fallback.cbotset`](cbot/presets/SS_P4_SINGLE_STOCK_Fallback.cbotset) | Any Stock `D1` | `10/12` profitable | `2.26%–5.09%` | `0.75%–1.72%` | `1.60–2.19` *(top 7)* | — | Positive across leaders | — |
+| Tier / Profile | Preset (`.cbotset`) | Chart | 10Y Return (`$25k`) | Max Eq DD | Worst Day | PF | Sharpe / Calmar | OOS (`2022–2026`) |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Tier 1 — Ultra-Safe CFD (`< 5%` DD)** | [`SS_P1_CFD_ULTRA_SAFE_Under6DD.cbotset`](cbot/presets/SS_P1_CFD_ULTRA_SAFE_Under6DD.cbotset) | `US TECH 100, D1` | **`$36,865` (`+47.5%`)** | **`4.87%`** | **`1.76%`** | **`1.77`** | `0.97` / `0.89` | `+2.77%/yr` (`4.87%` DD) |
+| **Tier 1 — Balanced CFD (`< 6%` DD)** | [`SS_P2_CFD_BALANCED_Under8DD.cbotset`](cbot/presets/SS_P2_CFD_BALANCED_Under8DD.cbotset) | `US TECH 100, D1` | **`$39,643` (`+58.6%`)** | **`5.54%`** | **`1.94%`** | **`1.73`** | `1.02` / `0.93` | `+3.15%/yr` (`5.54%` DD) |
+| **Tier 1 — Cash `1.0×` (`< 7%` DD)** | [`SS_P3_CASH_1X_Under8DD.cbotset`](cbot/presets/SS_P3_CASH_1X_Under8DD.cbotset) | `US TECH 100, D1` | **`$52,693` (`+110.8%`)** | **`6.64%`** | `2.49%` | **`2.00`** | `1.30` / `1.28` | `+5.74%/yr` (`6.64%` DD) |
+| **Tier 1 — Single-Stock Fallback** | [`SS_P4_SINGLE_STOCK_Fallback.cbotset`](cbot/presets/SS_P4_SINGLE_STOCK_Fallback.cbotset) | Any Stock `D1` | `10/12` profitable | `2.26%–5.09%` | `0.75%–1.72%` | `1.60–2.19` | — | Positive across leaders |
+| **Tier 2 — Balanced Growth CFD (`~15%` DD)** | [`SS_P5_GROWTH_15DD_CFD.cbotset`](cbot/presets/SS_P5_GROWTH_15DD_CFD.cbotset) | `US TECH 100, D1` | **`$100,333` (`+301.3%`)** | **`15.49%`** | `5.30%` | `1.57` | `1.06` / `1.06` | **`+9.26%/yr`** (`15.49%` DD) |
+| **Tier 2 — Balanced Growth Cash (`~14%` DD)** | [`SS_P6_GROWTH_15DD_Cash.cbotset`](cbot/presets/SS_P6_GROWTH_15DD_Cash.cbotset) | `US TECH 100, D1` | **`$133,422` (`+433.7%`)** | **`14.24%`** | `4.65%` | **`1.78`** | **`1.33` / `1.41`** | **`+12.53%/yr`** (`14.24%` DD) |
+| **Tier 3 — Trend-Hold Core CFD** | [`SS_P7_TRENDHOLD_CORE_CFD.cbotset`](cbot/presets/SS_P7_TRENDHOLD_CORE_CFD.cbotset) | `US TECH 100, D1` | **`$123,746` (`+395.0%`)** | `27.33%` | `7.77%` | `1.41` | `0.94` / `0.70` | **`+10.76%/yr`** (`27.91%` DD) |
+| **Tier 3 — Trend-Hold Core Cash** | [`SS_P8_TRENDHOLD_CORE_Cash.cbotset`](cbot/presets/SS_P8_TRENDHOLD_CORE_Cash.cbotset) | `US TECH 100, D1` | **`$198,385` (`+693.5%`)** | `25.85%` | `7.76%` | **`1.71`** | `1.19` / `0.98` | **`+15.94%/yr`** (`26.33%` DD) |
 
-> **Zero Kill-Switches Triggered:** Every portfolio preset recorded **`0` Emergency DD Kill-Switches** and **`0` Daily Halts** across the entire 2017–2026 period — including the **2020 COVID crash (`+11.50%`, `4.46%` DD)** and the **2022 Tech `-33%` bear market (`-2.59%`, `3.02%` DD)**.
+> **Out-of-Universe Proof (`python/backtest_multi_universe.py`):** All 3 tiers are profitable across **18 unseen stocks** — 10 Multi-Sector Blue-Chips (`LLY, JPM, V, MA, WMT, HD, CAT, XOM, UNH, PG`) and 8 Software/Semi Equipment (`CRM, ADBE, INTU, PANW, LRCX, KLAC, AMAT, QCOM`) — with `SS_P8_TRENDHOLD_CORE_Cash` beating Buy & Hold's Calmar ratio on **3/3 universes** while cutting Max DD by **50%–60%**.
 
 ---
 

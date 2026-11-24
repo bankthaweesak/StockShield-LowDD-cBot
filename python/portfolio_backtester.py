@@ -95,6 +95,12 @@ class PortfolioConfig:
     flatten_on_dd_breach: bool = True
     kill_cooldown_days: int = 10
 
+    # Tier 3: Trend-Hold Core Mode (replaces short-hold engines with wide EMA trend-hold)
+    enable_trend_hold_core: bool = False
+    trend_hold_exit_ema_period: int = 100
+    trend_hold_rebal_days: int = 21
+    trend_hold_use_qqq200_gate: bool = True
+
     # Realistic cTrader US Stock CFD Cost Model
     entry_cost_bps: float = 5.0
     exit_cost_bps: float = 5.0
@@ -192,6 +198,12 @@ def run_portfolio_backtest(
     caches = stock_caches if stock_caches is not None else {sym: build_stock_cache(d) for sym, d in stocks.items()}
     regime = regime_arr if regime_arr is not None else compute_macro_regime(benchmarks, cfg.regime)
     qqq_vol20 = ind.realized_vol_ann(benchmarks["QQQ"].close, 20)
+    qqq_ema200 = ind.ema(benchmarks["QQQ"].close, 200) if cfg.enable_trend_hold_core else None
+    trend_hold_emas = (
+        {sym: ind.ema(d.close, cfg.trend_hold_exit_ema_period) for sym, d in stocks.items()}
+        if cfg.enable_trend_hold_core
+        else {}
+    )
 
     cash = cfg.initial_capital
     peak_equity = cfg.initial_capital
@@ -266,6 +278,13 @@ def run_portfolio_backtest(
             if p.engine == "TREND":
                 if cfg.trend_fast_exit_ema50 and signal_leader_trend_exit(d, c, s):
                     exit_reason = "EMA50_EXIT"
+            elif p.engine == "TRENDHOLD":
+                q_ok = (not cfg.trend_hold_use_qqq200_gate) or (
+                    qqq_ema200 is not None and not np.isnan(qqq_ema200[s]) and benchmarks["QQQ"].close[s] > qqq_ema200[s]
+                )
+                ex_ema = trend_hold_emas[p.symbol][s]
+                if not q_ok or (not np.isnan(ex_ema) and d.close[s] < ex_ema):
+                    exit_reason = "TRENDHOLD_EXIT"
             elif p.engine == "IBS":
                 if signal_ibs_exit(d, c, s):
                     exit_reason = "SIGNAL"
@@ -291,6 +310,85 @@ def run_portfolio_backtest(
             kill_anchor_peak = open_eq
         curr_dd_pct = (peak_equity - open_eq) / peak_equity * 100.0 if peak_equity > 0 else 0.0
 
+        # Tier 3: Trend-Hold Core Mode (wide EMA trend-hold + QQQ200 bear shield)
+        if cfg.enable_trend_hold_core:
+            q_ok = (not cfg.trend_hold_use_qqq200_gate) or (
+                qqq_ema200 is not None and not np.isnan(qqq_ema200[s]) and benchmarks["QQQ"].close[s] > qqq_ema200[s]
+            )
+            if t >= kill_cooldown_until and q_ok:
+                max_slots = min(len(stock_order), cfg.max_concurrent_positions)
+                slot_notional = min(
+                    open_eq * (cfg.max_single_stock_notional_pct / 100.0),
+                    (open_eq * cfg.max_portfolio_leverage) / max(max_slots, 1),
+                )
+                need_rebal = (cfg.trend_hold_rebal_days > 0) and (step > 0) and (step % cfg.trend_hold_rebal_days == 0)
+
+                # Rebalance existing positions periodically to prevent single-stock drift
+                if need_rebal:
+                    for p in list(open_positions):
+                        op = float(stocks[p.symbol].open[t])
+                        cur_not = p.shares * op
+                        diff_not = slot_notional - cur_not
+                        if abs(diff_not) > max(200.0, 0.15 * slot_notional):
+                            diff_sh = diff_not / op
+                            cost = abs(diff_not) * (cfg.entry_cost_bps / 10_000.0)
+                            cash -= diff_not + cost
+                            p.shares += diff_sh
+                            p.entry_cost += cost
+
+                # Rank by RS score and fill open slots
+                ranked_th = (
+                    sorted(
+                        stock_order,
+                        key=lambda sym: float(caches[sym].rs_score[s]) if not np.isnan(caches[sym].rs_score[s]) else -999.0,
+                        reverse=True,
+                    )
+                    if len(stock_order) > 1
+                    else stock_order
+                )
+                for sym in ranked_th:
+                    if len(open_positions) >= max_slots:
+                        break
+                    if any(p.symbol == sym for p in open_positions):
+                        continue
+                    d = stocks[sym]
+                    c = caches[sym]
+                    ex_ema = trend_hold_emas[sym][s]
+                    if np.isnan(c.ema50[s]) or np.isnan(ex_ema) or np.isnan(c.atr14[s]):
+                        continue
+                    if d.close[s] > c.ema50[s] and d.close[s] > ex_ema:
+                        entry_px = float(d.open[t])
+                        atr14 = float(c.atr14[s])
+                        if entry_px <= 0.0 or atr14 <= 0.0:
+                            continue
+                        curr_port_not = sum(p.shares * float(stocks[p.symbol].open[t]) for p in open_positions)
+                        rem_port_not = max(0.0, open_eq * cfg.max_portfolio_leverage - curr_port_not)
+                        notional = min(slot_notional, rem_port_not)
+                        if notional < 100.0:
+                            continue
+                        shares = notional / entry_px
+                        sl_dist = 5.0 * atr14  # catastrophe SL only
+                        sl_px = max(0.01, entry_px - sl_dist)
+                        entry_cost = notional * (cfg.entry_cost_bps / 10_000.0)
+                        cash -= notional + entry_cost
+                        open_positions.append(
+                            OpenPosition(
+                                symbol=sym,
+                                cluster=STOCK_CLUSTERS.get(sym, "OTHER"),
+                                engine="TRENDHOLD",
+                                entry_idx=t,
+                                entry_date=str(dates[t]),
+                                entry_price=entry_px,
+                                shares=shares,
+                                initial_sl=sl_px,
+                                current_sl=sl_px,
+                                initial_risk_per_share=sl_dist,
+                                highest_high=entry_px,
+                                be_locked=False,
+                                swap_paid=0.0,
+                                entry_cost=entry_cost,
+                            )
+                        )
         dd_risk_mult = 1.0
         if cfg.quarter_risk_dd_pct > 0 and curr_dd_pct >= cfg.quarter_risk_dd_pct:
             dd_risk_mult = 0.35
@@ -312,7 +410,7 @@ def run_portfolio_backtest(
         else:
             ranked_symbols = stock_order
 
-        if t >= kill_cooldown_until and reg_s != REGIME_RED and len(open_positions) < cfg.max_concurrent_positions:
+        if not cfg.enable_trend_hold_core and t >= kill_cooldown_until and reg_s != REGIME_RED and len(open_positions) < cfg.max_concurrent_positions:
             reg_trend = 1.0 if reg_s == REGIME_GREEN else cfg.regime.yellow_trend_mult
             reg_mr = 1.0 if reg_s == REGIME_GREEN else cfg.regime.yellow_mr_mult
 

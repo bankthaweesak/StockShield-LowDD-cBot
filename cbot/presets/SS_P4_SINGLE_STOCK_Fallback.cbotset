@@ -55,6 +55,10 @@
     "DailyResetUtcOffsetHours": "0",
     "PersistDdState": "True",
     "EnableHud": "True",
-    "VerboseLogs": "True"
+    "VerboseLogs": "True",
+    "EnableTrendHoldCore": "False",
+    "TrendHoldExitEmaPeriod": "100",
+    "TrendHoldRebalDays": "21",
+    "TrendHoldUseQqq200Gate": "True"
   }
 }

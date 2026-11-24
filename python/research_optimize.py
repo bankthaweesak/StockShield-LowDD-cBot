@@ -175,11 +175,64 @@ def build_production_presets() -> Dict[str, PortfolioConfig]:
     p4.stock_vol_ref_pct = 24.0
     p4.max_portfolio_leverage = 0.25
 
+    # P5: Tier 2 Balanced Growth (~14-18% DD, CFD 7%/yr Swap)
+    p5 = copy.deepcopy(p2)
+    p5.trend_risk_pct = 1.60
+    p5.ibs_risk_pct = 1.10
+    p5.max_concurrent_positions = 8
+    p5.max_cluster_positions = 4
+    p5.max_single_stock_notional_pct = 22.0
+    p5.stock_vol_ref_pct = 26.0
+    p5.max_portfolio_leverage = 1.15
+    p5.target_benchmark_vol_pct = 22.0
+    p5.half_risk_dd_pct = 8.0
+    p5.quarter_risk_dd_pct = 13.0
+    p5.max_total_dd_pct = 0.0
+    p5.flatten_on_dd_breach = False
+    p5.annual_swap_pct = 7.0
+    p5.triple_wednesday_swap = True
+
+    # P6: Tier 2 Balanced Growth (~14-18% DD, 1.0x Cash / Low-Swap)
+    p6 = copy.deepcopy(p5)
+    p6.max_portfolio_leverage = 1.00
+    p6.annual_swap_pct = 0.0
+    p6.triple_wednesday_swap = False
+
+    # P7: Tier 3 Trend-Hold Core (Wide EMA100 + QQQ200 Bear Shield, CFD 7%/yr Swap)
+    p7 = copy.deepcopy(p2)
+    p7.enable_trend_hold_core = True
+    p7.trend_hold_exit_ema_period = 100
+    p7.trend_hold_rebal_days = 21
+    p7.trend_hold_use_qqq200_gate = True
+    p7.enable_trend = False
+    p7.enable_ibs = False
+    p7.enable_connors = False
+    p7.max_concurrent_positions = 8
+    p7.max_cluster_positions = 4
+    p7.max_single_stock_notional_pct = 34.0
+    p7.max_portfolio_leverage = 1.00
+    p7.use_vol_targeting = False
+    p7.half_risk_dd_pct = 0.0
+    p7.quarter_risk_dd_pct = 0.0
+    p7.max_total_dd_pct = 0.0
+    p7.flatten_on_dd_breach = False
+    p7.annual_swap_pct = 7.0
+    p7.triple_wednesday_swap = True
+
+    # P8: Tier 3 Trend-Hold Core (Wide EMA100 + QQQ200 Bear Shield, 1.0x Cash)
+    p8 = copy.deepcopy(p7)
+    p8.annual_swap_pct = 0.0
+    p8.triple_wednesday_swap = False
+
     return {
         "SS_P1_CFD_ULTRA_SAFE_Under6DD": p1,
         "SS_P2_CFD_BALANCED_Under8DD": p2,
         "SS_P3_CASH_1X_Under8DD": p3,
         "SS_P4_SINGLE_STOCK_Fallback": p4,
+        "SS_P5_GROWTH_15DD_CFD": p5,
+        "SS_P6_GROWTH_15DD_Cash": p6,
+        "SS_P7_TRENDHOLD_CORE_CFD": p7,
+        "SS_P8_TRENDHOLD_CORE_Cash": p8,
     }
 
 

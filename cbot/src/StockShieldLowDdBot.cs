@@ -205,6 +205,21 @@ namespace cAlgo.Robots
         public bool VerboseLogs { get; set; }
 
         // =====================================================================
+        // 6. TIER 3: TREND-HOLD CORE MODE (WIDE EMA + BEAR SHIELD)
+        // =====================================================================
+        [Parameter("Enable Trend-Hold Core Mode?", DefaultValue = false, Group = "6. Tier 3: Trend-Hold Core Mode")]
+        public bool EnableTrendHoldCore { get; set; }
+
+        [Parameter("Trend-Hold Exit EMA Period", DefaultValue = 100, MinValue = 30, MaxValue = 250, Step = 10, Group = "6. Tier 3: Trend-Hold Core Mode")]
+        public int TrendHoldExitEmaPeriod { get; set; }
+
+        [Parameter("Trend-Hold Rebalance (Trading Days)", DefaultValue = 21, MinValue = 0, MaxValue = 126, Group = "6. Tier 3: Trend-Hold Core Mode")]
+        public int TrendHoldRebalDays { get; set; }
+
+        [Parameter("Trend-Hold Use Benchmark EMA(200) Gate?", DefaultValue = true, Group = "6. Tier 3: Trend-Hold Core Mode")]
+        public bool TrendHoldUseQqq200Gate { get; set; }
+
+        // =====================================================================
         // INTERNAL STATE & DATA STRUCTURES
         // =====================================================================
         private const int RegimeRed = 0;
@@ -244,6 +259,7 @@ namespace cAlgo.Robots
         private DateTime _curResetDate;
         private DateTime _killCooldownUntilUtc = DateTime.MinValue;
         private bool _dailyHalted;
+        private int _barsElapsed;
 
         private int _lastRegime = RegimeGreen;
         private double _lastBenchVol20 = 18.0;
@@ -323,18 +339,131 @@ namespace cAlgo.Robots
 
             // 1. Evaluate Macro Regime & Benchmark Vol Scale from prior closed bar
             EvaluateMacroRegime();
+            _barsElapsed++;
 
-            // 2. Process Open-of-Bar Exits & EOD Trails on all open bot positions
-            ManageExistingPositions();
-
-            // 3. Evaluate RS-Ranked Entries across universe
-            if (Server.Time >= _killCooldownUntilUtc && !_dailyHalted && _lastRegime != RegimeRed)
+            if (EnableTrendHoldCore)
             {
-                EvaluateEntries();
+                EvaluateTrendHoldCore();
+            }
+            else
+            {
+                // 2. Process Open-of-Bar Exits & EOD Trails on all open bot positions
+                ManageExistingPositions();
+
+                // 3. Evaluate RS-Ranked Entries across universe
+                if (Server.Time >= _killCooldownUntilUtc && !_dailyHalted && _lastRegime != RegimeRed)
+                {
+                    EvaluateEntries();
+                }
             }
 
             SavePersistedState();
             UpdateHud();
+        }
+
+        private bool IsPrimaryBenchAboveEma200()
+        {
+            if (!TrendHoldUseQqq200Gate || _primaryBenchBars == null || _primaryBenchBars.Count < 210)
+                return true;
+            int idx = _primaryBenchBars.Count - 2;
+            double[] closes = ExtractCloses(_primaryBenchBars, idx + 1);
+            double ema200 = CalcEmaLast(closes, 200);
+            return !double.IsNaN(ema200) && closes[closes.Length - 1] > ema200;
+        }
+
+        private void EvaluateTrendHoldCore()
+        {
+            bool qOk = IsPrimaryBenchAboveEma200();
+            List<Position> botPositions = GetBotPositions();
+
+            // 1. Exits: close below TrendHoldExitEmaPeriod or benchmark below EMA(200)
+            foreach (Position pos in botPositions.ToList())
+            {
+                StockContext ctx = _universe.FirstOrDefault(u => u.Sym.Name.Equals(pos.SymbolName, StringComparison.OrdinalIgnoreCase));
+                if (ctx == null || ctx.DailyBars == null || ctx.DailyBars.Count < 210)
+                    continue;
+                int s = ctx.DailyBars.Count - 2;
+                double[] closes = ExtractCloses(ctx.DailyBars, s + 1);
+                double exEma = CalcEmaLast(closes, TrendHoldExitEmaPeriod);
+                if (!qOk || (!double.IsNaN(exEma) && closes[closes.Length - 1] < exEma))
+                {
+                    ClosePosition(pos);
+                    if (VerboseLogs)
+                        Print($"[{BaseLabel} TRENDHOLD EXIT] {ctx.CanonicalTicker} closed (BenchOK={qOk}).");
+                }
+            }
+
+            if (!qOk || Server.Time < _killCooldownUntilUtc || _dailyHalted)
+                return;
+
+            // 2. Update RS scores for ranking
+            foreach (StockContext ctx in _universe)
+            {
+                if (ctx.DailyBars == null || ctx.DailyBars.Count < 210)
+                {
+                    ctx.LastRsScore = -999.0;
+                    continue;
+                }
+                int s = ctx.DailyBars.Count - 2;
+                double[] closes = ExtractCloses(ctx.DailyBars, s + 1);
+                double vol20 = CalcRealizedVolAnnLast(closes, 20);
+                ctx.LastVol20 = (!double.IsNaN(vol20) && vol20 > 10.0) ? vol20 : 30.0;
+                ctx.LastRsScore = CalcRsScoreLast(closes, ctx.LastVol20, 60);
+            }
+
+            int maxSlots = Math.Min(_universe.Count, MaxConcurrentPositions);
+            double slotNotional = Math.Min(
+                Account.Equity * (MaxSingleStockNotionalPct / 100.0),
+                (Account.Equity * MaxPortfolioLeverage) / Math.Max(maxSlots, 1)
+            );
+
+            // 3. Fill open slots for stocks above EMA(50) & ExitEMA
+            botPositions = GetBotPositions();
+            foreach (StockContext ctx in _universe.OrderByDescending(u => u.LastRsScore))
+            {
+                if (botPositions.Count >= maxSlots)
+                    break;
+                if (botPositions.Any(p => p.SymbolName.Equals(ctx.Sym.Name, StringComparison.OrdinalIgnoreCase)))
+                    continue;
+                if (ctx.DailyBars == null || ctx.DailyBars.Count < 210)
+                    continue;
+
+                int s = ctx.DailyBars.Count - 2;
+                double[] closes = ExtractCloses(ctx.DailyBars, s + 1);
+                double c = closes[closes.Length - 1];
+                double ema50 = CalcEmaLast(closes, 50);
+                double exEma = CalcEmaLast(closes, TrendHoldExitEmaPeriod);
+                double atr14 = CalcAtrLast(ctx.DailyBars, s + 1, 14);
+                if (double.IsNaN(ema50) || double.IsNaN(exEma) || double.IsNaN(atr14) || atr14 <= 0.0)
+                    continue;
+
+                if (c > ema50 && c > exEma)
+                {
+                    double entryPx = ctx.Sym.Ask;
+                    double valuePerUnitMove = ctx.Sym.PipValue / ctx.Sym.PipSize;
+                    if (entryPx <= 0.0 || valuePerUnitMove <= 0.0)
+                        continue;
+                    double currPortNotional = ComputeTotalNotional(botPositions);
+                    double remPortNotional = Math.Max(0.0, Account.Equity * MaxPortfolioLeverage - currPortNotional);
+                    double notional = Math.Min(slotNotional, remPortNotional);
+                    double units = ctx.Sym.NormalizeVolumeInUnits(notional / (entryPx * valuePerUnitMove), RoundingMode.Down);
+                    if (units < ctx.Sym.VolumeInUnitsMin)
+                        continue;
+
+                    double slDist = 5.0 * atr14; // catastrophe SL only
+                    double slPrice = RoundPrice(ctx.Sym, Math.Max(ctx.Sym.TickSize * 5, entryPx - slDist));
+                    double slPips = Math.Max(1.0, (entryPx - slPrice) / ctx.Sym.PipSize);
+                    string label = MakeLabel("TRENDHOLD", ctx.CanonicalTicker);
+
+                    TradeResult res = ExecuteMarketOrder(TradeType.Buy, ctx.Sym.Name, units, label, slPips, null);
+                    if (res.IsSuccessful && res.Position != null)
+                    {
+                        botPositions.Add(res.Position);
+                        if (VerboseLogs)
+                            Print($"[{BaseLabel} TRENDHOLD ENTRY] {ctx.CanonicalTicker} | Units={units} | Entry={res.Position.EntryPrice:F2} | CatSL={slPrice:F2}");
+                    }
+                }
+            }
         }
 
         // =====================================================================

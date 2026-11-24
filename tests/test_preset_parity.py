@@ -19,7 +19,7 @@ def test_all_presets_match_cs_parameters_exactly():
     assert len(cs_params) >= 40
 
     preset_files = sorted(glob.glob(os.path.join(root, "cbot", "presets", "*.cbotset")))
-    assert len(preset_files) == 4
+    assert len(preset_files) == 8
 
     for pf in preset_files:
         with open(pf, "r", encoding="utf-8") as f:

@@ -83,6 +83,10 @@ def config_to_cbotset(tag: str, cfg: PortfolioConfig, single_symbol: bool, chart
             "PersistDdState": "True",
             "EnableHud": "True",
             "VerboseLogs": "True",
+            "EnableTrendHoldCore": _b(cfg.enable_trend_hold_core),
+            "TrendHoldExitEmaPeriod": str(cfg.trend_hold_exit_ema_period),
+            "TrendHoldRebalDays": str(cfg.trend_hold_rebal_days),
+            "TrendHoldUseQqq200Gate": _b(cfg.trend_hold_use_qqq200_gate),
         },
     }
 
@@ -113,6 +117,10 @@ def main() -> None:
         "SS_P2_CFD_BALANCED_Under8DD": ("SS_P2_CFD", False, "US TECH 100"),
         "SS_P3_CASH_1X_Under8DD": ("SS_P3_CASH", False, "US TECH 100"),
         "SS_P4_SINGLE_STOCK_Fallback": ("SS_P4_SINGLE", True, "AAPL"),
+        "SS_P5_GROWTH_15DD_CFD": ("SS_P5_GRW_CFD", False, "US TECH 100"),
+        "SS_P6_GROWTH_15DD_Cash": ("SS_P6_GRW_CSH", False, "US TECH 100"),
+        "SS_P7_TRENDHOLD_CORE_CFD": ("SS_P7_TH_CFD", False, "US TECH 100"),
+        "SS_P8_TRENDHOLD_CORE_Cash": ("SS_P8_TH_CSH", False, "US TECH 100"),
     }
 
     for name, cfg in presets.items():
