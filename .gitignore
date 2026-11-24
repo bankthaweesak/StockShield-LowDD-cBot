@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+python/data_cache/
+cbot/src/bin/
+cbot/src/obj/
+*.algo
+.DS_Store

@@ -1,0 +1,3804 @@
+{
+  "universe": [
+    "NVDA",
+    "AAPL",
+    "MSFT",
+    "AMZN",
+    "GOOGL",
+    "META",
+    "AVGO",
+    "AMD",
+    "TSLA",
+    "ORCL",
+    "NFLX",
+    "COST"
+  ],
+  "benchmarks": [
+    "QQQ",
+    "SPY"
+  ],
+  "date_range": [
+    "2017-09-20",
+    "2026-11-23"
+  ],
+  "is_range": [
+    "2017-09-20",
+    "2021-12-31"
+  ],
+  "oos_range": [
+    "2022-01-03",
+    "2026-11-23"
+  ],
+  "presets": {
+    "SS_P1_CFD_ULTRA_SAFE_Under6DD": {
+      "config": {
+        "initial_capital": 25000.0,
+        "regime": {
+          "use_macro_gate": true,
+          "vol_caution_pct": 26.0,
+          "vol_crash_pct": 36.0,
+          "yellow_trend_mult": 0.4,
+          "yellow_mr_mult": 0.5
+        },
+        "enable_trend": true,
+        "trend_top_k": 7,
+        "trend_risk_pct": 0.5,
+        "trend_min_rs_score": 0.2,
+        "trend_sl_atr": 2.0,
+        "trend_trail_atr": 3.2,
+        "trend_be_r": 1.0,
+        "trend_fast_exit_ema50": true,
+        "enable_ibs": false,
+        "ibs_top_k": 8,
+        "ibs_risk_pct": 0.5,
+        "ibs_thresh": 0.12,
+        "ibs_require_above_ema50": true,
+        "ibs_sl_atr": 2.5,
+        "ibs_max_hold_days": 5,
+        "enable_connors": false,
+        "connors_risk_pct": 0.5,
+        "connors_rsi_thresh": 12.0,
+        "connors_use_sma8": true,
+        "connors_sl_atr": 2.8,
+        "connors_max_hold_days": 8,
+        "max_drop_atr": 3.5,
+        "max_concurrent_positions": 6,
+        "max_positions_per_stock": 1,
+        "max_cluster_positions": 2,
+        "max_single_stock_notional_pct": 9.5,
+        "stock_vol_ref_pct": 20.0,
+        "max_portfolio_leverage": 0.45,
+        "use_vol_targeting": true,
+        "target_benchmark_vol_pct": 16.0,
+        "min_vol_scale": 0.35,
+        "half_risk_dd_pct": 2.2,
+        "quarter_risk_dd_pct": 4.0,
+        "max_daily_loss_pct": 0.0,
+        "max_total_dd_pct": 6.0,
+        "flatten_on_dd_breach": true,
+        "kill_cooldown_days": 10,
+        "entry_cost_bps": 5.0,
+        "exit_cost_bps": 5.0,
+        "annual_swap_pct": 7.0,
+        "triple_wednesday_swap": true
+      },
+      "full": {
+        "start_date": "2017-09-20",
+        "end_date": "2026-11-23",
+        "final_equity": 36865.49,
+        "total_return_pct": 47.46,
+        "cagr_pct": 4.33,
+        "max_equity_dd_pct": 4.87,
+        "max_close_dd_pct": 4.82,
+        "worst_day_dd_pct": 1.76,
+        "calmar": 0.89,
+        "sharpe": 0.97,
+        "sortino": 1.16,
+        "profit_factor": 1.77,
+        "win_rate_pct": 36.36,
+        "avg_hold_days": 16.63,
+        "trades": 462,
+        "total_swap_paid": 3043.74,
+        "total_costs_paid": 659.87,
+        "avg_leverage": 0.158,
+        "max_leverage_seen": 0.462,
+        "dd_kill_switches": 0,
+        "daily_halts": 0,
+        "yearly_stats": {
+          "2017": {
+            "return_pct": -0.83,
+            "max_dd_pct": 2.58,
+            "worst_day_pct": 1.19,
+            "trades": 23.0
+          },
+          "2018": {
+            "return_pct": 4.69,
+            "max_dd_pct": 4.14,
+            "worst_day_pct": 1.37,
+            "trades": 60.0
+          },
+          "2019": {
+            "return_pct": 4.08,
+            "max_dd_pct": 3.77,
+            "worst_day_pct": 0.83,
+            "trades": 41.0
+          },
+          "2020": {
+            "return_pct": 12.28,
+            "max_dd_pct": 3.74,
+            "worst_day_pct": 1.42,
+            "trades": 54.0
+          },
+          "2021": {
+            "return_pct": 6.11,
+            "max_dd_pct": 3.11,
+            "worst_day_pct": 1.17,
+            "trades": 63.0
+          },
+          "2022": {
+            "return_pct": -2.0,
+            "max_dd_pct": 2.3,
+            "worst_day_pct": 0.82,
+            "trades": 18.0
+          },
+          "2023": {
+            "return_pct": 3.05,
+            "max_dd_pct": 4.87,
+            "worst_day_pct": 1.03,
+            "trades": 44.0
+          },
+          "2024": {
+            "return_pct": 5.09,
+            "max_dd_pct": 3.6,
+            "worst_day_pct": 1.29,
+            "trades": 58.0
+          },
+          "2025": {
+            "return_pct": 8.32,
+            "max_dd_pct": 2.67,
+            "worst_day_pct": 1.76,
+            "trades": 48.0
+          },
+          "2026": {
+            "return_pct": -0.36,
+            "max_dd_pct": 3.39,
+            "worst_day_pct": 0.88,
+            "trades": 53.0
+          }
+        },
+        "engine_stats": {
+          "TREND": {
+            "trades": 462.0,
+            "win_rate_pct": 36.36,
+            "net_pnl": 11541.17,
+            "pf": 1.77,
+            "avg_hold": 16.63,
+            "swap_paid": 3015.84
+          }
+        },
+        "stock_stats": {
+          "AAPL": {
+            "trades": 46.0,
+            "win_rate_pct": 39.13,
+            "net_pnl": 1466.77,
+            "pf": 2.31,
+            "avg_hold": 19.17,
+            "swap_paid": 427.64
+          },
+          "AMD": {
+            "trades": 43.0,
+            "win_rate_pct": 41.86,
+            "net_pnl": 2758.7,
+            "pf": 3.34,
+            "avg_hold": 12.02,
+            "swap_paid": 166.63
+          },
+          "AMZN": {
+            "trades": 35.0,
+            "win_rate_pct": 42.86,
+            "net_pnl": -576.04,
+            "pf": 0.58,
+            "avg_hold": 13.11,
+            "swap_paid": 182.65
+          },
+          "AVGO": {
+            "trades": 53.0,
+            "win_rate_pct": 22.64,
+            "net_pnl": -690.91,
+            "pf": 0.67,
+            "avg_hold": 13.66,
+            "swap_paid": 241.36
+          },
+          "COST": {
+            "trades": 47.0,
+            "win_rate_pct": 36.17,
+            "net_pnl": 1018.32,
+            "pf": 1.82,
+            "avg_hold": 18.4,
+            "swap_paid": 413.67
+          },
+          "GOOGL": {
+            "trades": 27.0,
+            "win_rate_pct": 40.74,
+            "net_pnl": 1808.55,
+            "pf": 3.66,
+            "avg_hold": 23.15,
+            "swap_paid": 346.84
+          },
+          "META": {
+            "trades": 23.0,
+            "win_rate_pct": 34.78,
+            "net_pnl": 549.8,
+            "pf": 1.45,
+            "avg_hold": 20.96,
+            "swap_paid": 177.19
+          },
+          "MSFT": {
+            "trades": 38.0,
+            "win_rate_pct": 42.11,
+            "net_pnl": 637.49,
+            "pf": 1.62,
+            "avg_hold": 19.16,
+            "swap_paid": 348.3
+          },
+          "NFLX": {
+            "trades": 29.0,
+            "win_rate_pct": 41.38,
+            "net_pnl": 339.85,
+            "pf": 1.28,
+            "avg_hold": 21.14,
+            "swap_paid": 187.68
+          },
+          "NVDA": {
+            "trades": 55.0,
+            "win_rate_pct": 36.36,
+            "net_pnl": 909.14,
+            "pf": 1.55,
+            "avg_hold": 15.49,
+            "swap_paid": 241.75
+          },
+          "ORCL": {
+            "trades": 29.0,
+            "win_rate_pct": 34.48,
+            "net_pnl": 831.21,
+            "pf": 1.84,
+            "avg_hold": 16.0,
+            "swap_paid": 161.54
+          },
+          "TSLA": {
+            "trades": 37.0,
+            "win_rate_pct": 29.73,
+            "net_pnl": 2488.27,
+            "pf": 3.08,
+            "avg_hold": 12.7,
+            "swap_paid": 120.6
+          }
+        }
+      },
+      "is": {
+        "start_date": "2017-09-20",
+        "end_date": "2021-12-31",
+        "final_equity": 32186.58,
+        "total_return_pct": 28.75,
+        "cagr_pct": 6.08,
+        "max_equity_dd_pct": 4.53,
+        "max_close_dd_pct": 4.48,
+        "worst_day_dd_pct": 1.42,
+        "calmar": 1.34,
+        "sharpe": 1.27,
+        "sortino": 1.5,
+        "profit_factor": 1.96,
+        "win_rate_pct": 38.17,
+        "avg_hold_days": 16.65,
+        "trades": 241,
+        "total_swap_paid": 1541.17,
+        "total_costs_paid": 340.57,
+        "avg_leverage": 0.189,
+        "max_leverage_seen": 0.462,
+        "dd_kill_switches": 0,
+        "daily_halts": 0,
+        "yearly_stats": {
+          "2017": {
+            "return_pct": -0.83,
+            "max_dd_pct": 2.58,
+            "worst_day_pct": 1.19,
+            "trades": 23.0
+          },
+          "2018": {
+            "return_pct": 4.69,
+            "max_dd_pct": 4.14,
+            "worst_day_pct": 1.37,
+            "trades": 60.0
+          },
+          "2019": {
+            "return_pct": 4.08,
+            "max_dd_pct": 3.77,
+            "worst_day_pct": 0.83,
+            "trades": 41.0
+          },
+          "2020": {
+            "return_pct": 12.28,
+            "max_dd_pct": 3.74,
+            "worst_day_pct": 1.42,
+            "trades": 54.0
+          },
+          "2021": {
+            "return_pct": 6.11,
+            "max_dd_pct": 3.11,
+            "worst_day_pct": 1.17,
+            "trades": 63.0
+          }
+        },
+        "engine_stats": {
+          "TREND": {
+            "trades": 241.0,
+            "win_rate_pct": 38.17,
+            "net_pnl": 6693.96,
+            "pf": 1.96,
+            "avg_hold": 16.65,
+            "swap_paid": 1515.19
+          }
+        },
+        "stock_stats": {
+          "AAPL": {
+            "trades": 26.0,
+            "win_rate_pct": 46.15,
+            "net_pnl": 1216.02,
+            "pf": 3.51,
+            "avg_hold": 17.96,
+            "swap_paid": 214.12
+          },
+          "AMD": {
+            "trades": 23.0,
+            "win_rate_pct": 34.78,
+            "net_pnl": 1167.13,
+            "pf": 2.88,
+            "avg_hold": 13.09,
+            "swap_paid": 91.24
+          },
+          "AMZN": {
+            "trades": 15.0,
+            "win_rate_pct": 60.0,
+            "net_pnl": 146.36,
+            "pf": 1.43,
+            "avg_hold": 14.73,
+            "swap_paid": 61.04
+          },
+          "AVGO": {
+            "trades": 24.0,
+            "win_rate_pct": 12.5,
+            "net_pnl": -793.43,
+            "pf": 0.21,
+            "avg_hold": 13.38,
+            "swap_paid": 86.95
+          },
+          "COST": {
+            "trades": 27.0,
+            "win_rate_pct": 40.74,
+            "net_pnl": 700.52,
+            "pf": 2.42,
+            "avg_hold": 18.96,
+            "swap_paid": 227.01
+          },
+          "GOOGL": {
+            "trades": 14.0,
+            "win_rate_pct": 50.0,
+            "net_pnl": 1009.98,
+            "pf": 4.25,
+            "avg_hold": 26.86,
+            "swap_paid": 207.87
+          },
+          "META": {
+            "trades": 8.0,
+            "win_rate_pct": 25.0,
+            "net_pnl": -386.89,
+            "pf": 0.31,
+            "avg_hold": 17.12,
+            "swap_paid": 39.97
+          },
+          "MSFT": {
+            "trades": 26.0,
+            "win_rate_pct": 42.31,
+            "net_pnl": 160.02,
+            "pf": 1.24,
+            "avg_hold": 17.31,
+            "swap_paid": 229.28
+          },
+          "NFLX": {
+            "trades": 17.0,
+            "win_rate_pct": 35.29,
+            "net_pnl": 101.96,
+            "pf": 1.1,
+            "avg_hold": 16.59,
+            "swap_paid": 87.77
+          },
+          "NVDA": {
+            "trades": 28.0,
+            "win_rate_pct": 39.29,
+            "net_pnl": 644.31,
+            "pf": 1.99,
+            "avg_hold": 16.11,
+            "swap_paid": 124.77
+          },
+          "ORCL": {
+            "trades": 14.0,
+            "win_rate_pct": 28.57,
+            "net_pnl": -39.9,
+            "pf": 0.86,
+            "avg_hold": 16.0,
+            "swap_paid": 75.56
+          },
+          "TSLA": {
+            "trades": 19.0,
+            "win_rate_pct": 42.11,
+            "net_pnl": 2767.86,
+            "pf": 5.78,
+            "avg_hold": 14.21,
+            "swap_paid": 69.6
+          }
+        }
+      },
+      "oos": {
+        "start_date": "2022-01-03",
+        "end_date": "2026-11-23",
+        "final_equity": 28565.4,
+        "total_return_pct": 14.26,
+        "cagr_pct": 2.77,
+        "max_equity_dd_pct": 4.87,
+        "max_close_dd_pct": 4.82,
+        "worst_day_dd_pct": 1.76,
+        "calmar": 0.57,
+        "sharpe": 0.67,
+        "sortino": 0.8,
+        "profit_factor": 1.52,
+        "win_rate_pct": 34.09,
+        "avg_hold_days": 16.41,
+        "trades": 220,
+        "total_swap_paid": 1164.13,
+        "total_costs_paid": 250.32,
+        "avg_leverage": 0.131,
+        "max_leverage_seen": 0.445,
+        "dd_kill_switches": 0,
+        "daily_halts": 0,
+        "yearly_stats": {
+          "2022": {
+            "return_pct": -2.23,
+            "max_dd_pct": 2.61,
+            "worst_day_pct": 0.85,
+            "trades": 17.0
+          },
+          "2023": {
+            "return_pct": 3.05,
+            "max_dd_pct": 4.87,
+            "worst_day_pct": 1.03,
+            "trades": 44.0
+          },
+          "2024": {
+            "return_pct": 5.09,
+            "max_dd_pct": 3.6,
+            "worst_day_pct": 1.29,
+            "trades": 58.0
+          },
+          "2025": {
+            "return_pct": 8.32,
+            "max_dd_pct": 2.67,
+            "worst_day_pct": 1.76,
+            "trades": 48.0
+          },
+          "2026": {
+            "return_pct": -0.36,
+            "max_dd_pct": 3.39,
+            "worst_day_pct": 0.88,
+            "trades": 53.0
+          }
+        },
+        "engine_stats": {
+          "TREND": {
+            "trades": 220.0,
+            "win_rate_pct": 34.09,
+            "net_pnl": 3314.1,
+            "pf": 1.52,
+            "avg_hold": 16.41,
+            "swap_paid": 1142.52
+          }
+        },
+        "stock_stats": {
+          "AAPL": {
+            "trades": 20.0,
+            "win_rate_pct": 30.0,
+            "net_pnl": 142.38,
+            "pf": 1.26,
+            "avg_hold": 20.5,
+            "swap_paid": 165.95
+          },
+          "AMD": {
+            "trades": 20.0,
+            "win_rate_pct": 50.0,
+            "net_pnl": 1174.77,
+            "pf": 3.4,
+            "avg_hold": 10.4,
+            "swap_paid": 57.83
+          },
+          "AMZN": {
+            "trades": 20.0,
+            "win_rate_pct": 30.0,
+            "net_pnl": -559.75,
+            "pf": 0.29,
+            "avg_hold": 11.9,
+            "swap_paid": 94.23
+          },
+          "AVGO": {
+            "trades": 29.0,
+            "win_rate_pct": 27.59,
+            "net_pnl": -193.34,
+            "pf": 0.79,
+            "avg_hold": 13.24,
+            "swap_paid": 106.41
+          },
+          "COST": {
+            "trades": 20.0,
+            "win_rate_pct": 30.0,
+            "net_pnl": 233.01,
+            "pf": 1.39,
+            "avg_hold": 16.95,
+            "swap_paid": 138.75
+          },
+          "GOOGL": {
+            "trades": 13.0,
+            "win_rate_pct": 30.77,
+            "net_pnl": 618.78,
+            "pf": 3.16,
+            "avg_hold": 19.15,
+            "swap_paid": 107.68
+          },
+          "META": {
+            "trades": 15.0,
+            "win_rate_pct": 40.0,
+            "net_pnl": 725.8,
+            "pf": 2.42,
+            "avg_hold": 23.0,
+            "swap_paid": 106.33
+          },
+          "MSFT": {
+            "trades": 11.0,
+            "win_rate_pct": 45.45,
+            "net_pnl": 396.16,
+            "pf": 2.66,
+            "avg_hold": 24.64,
+            "swap_paid": 91.07
+          },
+          "NFLX": {
+            "trades": 12.0,
+            "win_rate_pct": 50.0,
+            "net_pnl": 184.33,
+            "pf": 2.02,
+            "avg_hold": 27.58,
+            "swap_paid": 77.42
+          },
+          "NVDA": {
+            "trades": 27.0,
+            "win_rate_pct": 33.33,
+            "net_pnl": 205.2,
+            "pf": 1.26,
+            "avg_hold": 14.85,
+            "swap_paid": 90.64
+          },
+          "ORCL": {
+            "trades": 15.0,
+            "win_rate_pct": 40.0,
+            "net_pnl": 674.98,
+            "pf": 2.24,
+            "avg_hold": 16.0,
+            "swap_paid": 66.63
+          },
+          "TSLA": {
+            "trades": 18.0,
+            "win_rate_pct": 16.67,
+            "net_pnl": -288.23,
+            "pf": 0.48,
+            "avg_hold": 10.83,
+            "swap_paid": 39.59
+          }
+        }
+      },
+      "stress_2x": {
+        "start_date": "2017-09-20",
+        "end_date": "2026-11-23",
+        "final_equity": 34355.65,
+        "total_return_pct": 37.42,
+        "cagr_pct": 3.53,
+        "max_equity_dd_pct": 4.98,
+        "max_close_dd_pct": 4.88,
+        "worst_day_dd_pct": 1.77,
+        "calmar": 0.71,
+        "sharpe": 0.81,
+        "sortino": 0.95,
+        "profit_factor": 1.61,
+        "win_rate_pct": 34.85,
+        "avg_hold_days": 16.63,
+        "trades": 462,
+        "total_swap_paid": 4137.47,
+        "total_costs_paid": 1251.04,
+        "avg_leverage": 0.156,
+        "max_leverage_seen": 0.462,
+        "dd_kill_switches": 0,
+        "daily_halts": 0,
+        "yearly_stats": {
+          "2017": {
+            "return_pct": -1.26,
+            "max_dd_pct": 2.8,
+            "worst_day_pct": 1.21,
+            "trades": 23.0
+          },
+          "2018": {
+            "return_pct": 3.87,
+            "max_dd_pct": 4.52,
+            "worst_day_pct": 1.39,
+            "trades": 60.0
+          },
+          "2019": {
+            "return_pct": 3.26,
+            "max_dd_pct": 3.64,
+            "worst_day_pct": 0.83,
+            "trades": 41.0
+          },
+          "2020": {
+            "return_pct": 11.52,
+            "max_dd_pct": 3.79,
+            "worst_day_pct": 1.43,
+            "trades": 54.0
+          },
+          "2021": {
+            "return_pct": 5.08,
+            "max_dd_pct": 3.27,
+            "worst_day_pct": 1.19,
+            "trades": 63.0
+          },
+          "2022": {
+            "return_pct": -2.07,
+            "max_dd_pct": 2.36,
+            "worst_day_pct": 0.83,
+            "trades": 18.0
+          },
+          "2023": {
+            "return_pct": 2.52,
+            "max_dd_pct": 4.98,
+            "worst_day_pct": 1.03,
+            "trades": 44.0
+          },
+          "2024": {
+            "return_pct": 3.45,
+            "max_dd_pct": 3.89,
+            "worst_day_pct": 1.3,
+            "trades": 58.0
+          },
+          "2025": {
+            "return_pct": 7.49,
+            "max_dd_pct": 2.73,
+            "worst_day_pct": 1.77,
+            "trades": 48.0
+          },
+          "2026": {
+            "return_pct": -0.82,
+            "max_dd_pct": 3.46,
+            "worst_day_pct": 0.89,
+            "trades": 53.0
+          }
+        },
+        "engine_stats": {
+          "TREND": {
+            "trades": 462.0,
+            "win_rate_pct": 34.85,
+            "net_pnl": 9066.17,
+            "pf": 1.61,
+            "avg_hold": 16.63,
+            "swap_paid": 4100.3
+          }
+        },
+        "stock_stats": {
+          "AAPL": {
+            "trades": 46.0,
+            "win_rate_pct": 39.13,
+            "net_pnl": 1209.44,
+            "pf": 2.07,
+            "avg_hold": 19.17,
+            "swap_paid": 579.76
+          },
+          "AMD": {
+            "trades": 43.0,
+            "win_rate_pct": 41.86,
+            "net_pnl": 2530.43,
+            "pf": 3.26,
+            "avg_hold": 12.02,
+            "swap_paid": 225.94
+          },
+          "AMZN": {
+            "trades": 35.0,
+            "win_rate_pct": 40.0,
+            "net_pnl": -618.72,
+            "pf": 0.52,
+            "avg_hold": 13.11,
+            "swap_paid": 245.5
+          },
+          "AVGO": {
+            "trades": 53.0,
+            "win_rate_pct": 22.64,
+            "net_pnl": -780.58,
+            "pf": 0.62,
+            "avg_hold": 13.66,
+            "swap_paid": 328.94
+          },
+          "COST": {
+            "trades": 47.0,
+            "win_rate_pct": 34.04,
+            "net_pnl": 728.76,
+            "pf": 1.57,
+            "avg_hold": 18.4,
+            "swap_paid": 561.57
+          },
+          "GOOGL": {
+            "trades": 27.0,
+            "win_rate_pct": 37.04,
+            "net_pnl": 1630.35,
+            "pf": 3.33,
+            "avg_hold": 23.15,
+            "swap_paid": 490.41
+          },
+          "META": {
+            "trades": 23.0,
+            "win_rate_pct": 34.78,
+            "net_pnl": 38.72,
+            "pf": 1.03,
+            "avg_hold": 20.96,
+            "swap_paid": 216.2
+          },
+          "MSFT": {
+            "trades": 38.0,
+            "win_rate_pct": 36.84,
+            "net_pnl": 442.58,
+            "pf": 1.42,
+            "avg_hold": 19.16,
+            "swap_paid": 479.54
+          },
+          "NFLX": {
+            "trades": 29.0,
+            "win_rate_pct": 41.38,
+            "net_pnl": 217.03,
+            "pf": 1.18,
+            "avg_hold": 21.14,
+            "swap_paid": 258.81
+          },
+          "NVDA": {
+            "trades": 55.0,
+            "win_rate_pct": 32.73,
+            "net_pnl": 757.97,
+            "pf": 1.46,
+            "avg_hold": 15.49,
+            "swap_paid": 332.61
+          },
+          "ORCL": {
+            "trades": 29.0,
+            "win_rate_pct": 34.48,
+            "net_pnl": 659.02,
+            "pf": 1.65,
+            "avg_hold": 16.0,
+            "swap_paid": 221.92
+          },
+          "TSLA": {
+            "trades": 37.0,
+            "win_rate_pct": 29.73,
+            "net_pnl": 2251.17,
+            "pf": 2.9,
+            "avg_hold": 12.7,
+            "swap_paid": 159.1
+          }
+        }
+      }
+    },
+    "SS_P2_CFD_BALANCED_Under8DD": {
+      "config": {
+        "initial_capital": 25000.0,
+        "regime": {
+          "use_macro_gate": true,
+          "vol_caution_pct": 26.0,
+          "vol_crash_pct": 36.0,
+          "yellow_trend_mult": 0.4,
+          "yellow_mr_mult": 0.5
+        },
+        "enable_trend": true,
+        "trend_top_k": 7,
+        "trend_risk_pct": 0.65,
+        "trend_min_rs_score": 0.2,
+        "trend_sl_atr": 2.0,
+        "trend_trail_atr": 3.2,
+        "trend_be_r": 1.0,
+        "trend_fast_exit_ema50": true,
+        "enable_ibs": true,
+        "ibs_top_k": 8,
+        "ibs_risk_pct": 0.45,
+        "ibs_thresh": 0.12,
+        "ibs_require_above_ema50": true,
+        "ibs_sl_atr": 2.5,
+        "ibs_max_hold_days": 5,
+        "enable_connors": false,
+        "connors_risk_pct": 0.5,
+        "connors_rsi_thresh": 12.0,
+        "connors_use_sma8": true,
+        "connors_sl_atr": 2.8,
+        "connors_max_hold_days": 8,
+        "max_drop_atr": 3.5,
+        "max_concurrent_positions": 6,
+        "max_positions_per_stock": 1,
+        "max_cluster_positions": 2,
+        "max_single_stock_notional_pct": 10.5,
+        "stock_vol_ref_pct": 20.0,
+        "max_portfolio_leverage": 0.52,
+        "use_vol_targeting": true,
+        "target_benchmark_vol_pct": 16.5,
+        "min_vol_scale": 0.35,
+        "half_risk_dd_pct": 2.2,
+        "quarter_risk_dd_pct": 4.0,
+        "max_daily_loss_pct": 0.0,
+        "max_total_dd_pct": 7.5,
+        "flatten_on_dd_breach": true,
+        "kill_cooldown_days": 10,
+        "entry_cost_bps": 5.0,
+        "exit_cost_bps": 5.0,
+        "annual_swap_pct": 7.0,
+        "triple_wednesday_swap": true
+      },
+      "full": {
+        "start_date": "2017-09-20",
+        "end_date": "2026-11-23",
+        "final_equity": 39642.8,
+        "total_return_pct": 58.57,
+        "cagr_pct": 5.16,
+        "max_equity_dd_pct": 5.54,
+        "max_close_dd_pct": 5.47,
+        "worst_day_dd_pct": 1.94,
+        "calmar": 0.93,
+        "sharpe": 1.02,
+        "sortino": 1.23,
+        "profit_factor": 1.73,
+        "win_rate_pct": 46.19,
+        "avg_hold_days": 12.33,
+        "trades": 669,
+        "total_swap_paid": 3739.75,
+        "total_costs_paid": 979.99,
+        "avg_leverage": 0.185,
+        "max_leverage_seen": 0.533,
+        "dd_kill_switches": 0,
+        "daily_halts": 0,
+        "yearly_stats": {
+          "2017": {
+            "return_pct": -0.5,
+            "max_dd_pct": 2.93,
+            "worst_day_pct": 1.39,
+            "trades": 29.0
+          },
+          "2018": {
+            "return_pct": 5.41,
+            "max_dd_pct": 5.18,
+            "worst_day_pct": 1.58,
+            "trades": 85.0
+          },
+          "2019": {
+            "return_pct": 4.84,
+            "max_dd_pct": 4.37,
+            "worst_day_pct": 0.92,
+            "trades": 62.0
+          },
+          "2020": {
+            "return_pct": 11.5,
+            "max_dd_pct": 4.46,
+            "worst_day_pct": 1.47,
+            "trades": 82.0
+          },
+          "2021": {
+            "return_pct": 10.79,
+            "max_dd_pct": 3.42,
+            "worst_day_pct": 1.37,
+            "trades": 86.0
+          },
+          "2022": {
+            "return_pct": -2.59,
+            "max_dd_pct": 3.02,
+            "worst_day_pct": 0.98,
+            "trades": 38.0
+          },
+          "2023": {
+            "return_pct": 4.7,
+            "max_dd_pct": 5.54,
+            "worst_day_pct": 1.25,
+            "trades": 62.0
+          },
+          "2024": {
+            "return_pct": 6.74,
+            "max_dd_pct": 3.12,
+            "worst_day_pct": 1.48,
+            "trades": 77.0
+          },
+          "2025": {
+            "return_pct": 10.07,
+            "max_dd_pct": 2.9,
+            "worst_day_pct": 1.94,
+            "trades": 71.0
+          },
+          "2026": {
+            "return_pct": -2.59,
+            "max_dd_pct": 3.94,
+            "worst_day_pct": 1.17,
+            "trades": 77.0
+          }
+        },
+        "engine_stats": {
+          "IBS": {
+            "trades": 210.0,
+            "win_rate_pct": 68.1,
+            "net_pnl": 337.24,
+            "pf": 1.12,
+            "avg_hold": 2.97,
+            "swap_paid": 169.23
+          },
+          "TREND": {
+            "trades": 459.0,
+            "win_rate_pct": 36.17,
+            "net_pnl": 14047.86,
+            "pf": 1.82,
+            "avg_hold": 16.61,
+            "swap_paid": 3548.37
+          }
+        },
+        "stock_stats": {
+          "AAPL": {
+            "trades": 65.0,
+            "win_rate_pct": 47.69,
+            "net_pnl": 1821.64,
+            "pf": 2.29,
+            "avg_hold": 14.48,
+            "swap_paid": 517.06
+          },
+          "AMD": {
+            "trades": 63.0,
+            "win_rate_pct": 52.38,
+            "net_pnl": 3296.13,
+            "pf": 3.27,
+            "avg_hold": 9.21,
+            "swap_paid": 201.97
+          },
+          "AMZN": {
+            "trades": 51.0,
+            "win_rate_pct": 50.98,
+            "net_pnl": -519.31,
+            "pf": 0.74,
+            "avg_hold": 10.39,
+            "swap_paid": 245.2
+          },
+          "AVGO": {
+            "trades": 72.0,
+            "win_rate_pct": 33.33,
+            "net_pnl": -434.57,
+            "pf": 0.83,
+            "avg_hold": 10.68,
+            "swap_paid": 303.52
+          },
+          "COST": {
+            "trades": 73.0,
+            "win_rate_pct": 46.58,
+            "net_pnl": 1328.14,
+            "pf": 1.72,
+            "avg_hold": 12.93,
+            "swap_paid": 520.97
+          },
+          "GOOGL": {
+            "trades": 37.0,
+            "win_rate_pct": 45.95,
+            "net_pnl": 2450.55,
+            "pf": 3.95,
+            "avg_hold": 17.59,
+            "swap_paid": 426.57
+          },
+          "META": {
+            "trades": 42.0,
+            "win_rate_pct": 50.0,
+            "net_pnl": 352.5,
+            "pf": 1.22,
+            "avg_hold": 12.79,
+            "swap_paid": 218.68
+          },
+          "MSFT": {
+            "trades": 46.0,
+            "win_rate_pct": 50.0,
+            "net_pnl": 689.1,
+            "pf": 1.52,
+            "avg_hold": 15.28,
+            "swap_paid": 379.53
+          },
+          "NFLX": {
+            "trades": 45.0,
+            "win_rate_pct": 51.11,
+            "net_pnl": 319.86,
+            "pf": 1.19,
+            "avg_hold": 14.38,
+            "swap_paid": 235.49
+          },
+          "NVDA": {
+            "trades": 82.0,
+            "win_rate_pct": 47.56,
+            "net_pnl": 1306.73,
+            "pf": 1.57,
+            "avg_hold": 11.46,
+            "swap_paid": 309.55
+          },
+          "ORCL": {
+            "trades": 38.0,
+            "win_rate_pct": 36.84,
+            "net_pnl": 969.12,
+            "pf": 1.77,
+            "avg_hold": 12.89,
+            "swap_paid": 211.95
+          },
+          "TSLA": {
+            "trades": 55.0,
+            "win_rate_pct": 43.64,
+            "net_pnl": 2805.2,
+            "pf": 2.79,
+            "avg_hold": 9.42,
+            "swap_paid": 147.11
+          }
+        }
+      },
+      "is": {
+        "start_date": "2017-09-20",
+        "end_date": "2021-12-31",
+        "final_equity": 33960.37,
+        "total_return_pct": 35.84,
+        "cagr_pct": 7.42,
+        "max_equity_dd_pct": 5.2,
+        "max_close_dd_pct": 5.13,
+        "worst_day_dd_pct": 1.58,
+        "calmar": 1.43,
+        "sharpe": 1.36,
+        "sortino": 1.65,
+        "profit_factor": 1.98,
+        "win_rate_pct": 49.13,
+        "avg_hold_days": 12.42,
+        "trades": 344,
+        "total_swap_paid": 1804.61,
+        "total_costs_paid": 483.55,
+        "avg_leverage": 0.216,
+        "max_leverage_seen": 0.533,
+        "dd_kill_switches": 0,
+        "daily_halts": 0,
+        "yearly_stats": {
+          "2017": {
+            "return_pct": -0.5,
+            "max_dd_pct": 2.93,
+            "worst_day_pct": 1.39,
+            "trades": 29.0
+          },
+          "2018": {
+            "return_pct": 5.41,
+            "max_dd_pct": 5.18,
+            "worst_day_pct": 1.58,
+            "trades": 85.0
+          },
+          "2019": {
+            "return_pct": 4.84,
+            "max_dd_pct": 4.37,
+            "worst_day_pct": 0.92,
+            "trades": 62.0
+          },
+          "2020": {
+            "return_pct": 11.5,
+            "max_dd_pct": 4.46,
+            "worst_day_pct": 1.47,
+            "trades": 82.0
+          },
+          "2021": {
+            "return_pct": 10.79,
+            "max_dd_pct": 3.42,
+            "worst_day_pct": 1.37,
+            "trades": 86.0
+          }
+        },
+        "engine_stats": {
+          "IBS": {
+            "trades": 104.0,
+            "win_rate_pct": 75.0,
+            "net_pnl": 737.22,
+            "pf": 1.83,
+            "avg_hold": 2.83,
+            "swap_paid": 73.2
+          },
+          "TREND": {
+            "trades": 240.0,
+            "win_rate_pct": 37.92,
+            "net_pnl": 7648.27,
+            "pf": 2.0,
+            "avg_hold": 16.58,
+            "swap_paid": 1699.82
+          }
+        },
+        "stock_stats": {
+          "AAPL": {
+            "trades": 39.0,
+            "win_rate_pct": 58.97,
+            "net_pnl": 1507.48,
+            "pf": 3.83,
+            "avg_hold": 13.0,
+            "swap_paid": 244.84
+          },
+          "AMD": {
+            "trades": 36.0,
+            "win_rate_pct": 47.22,
+            "net_pnl": 1398.28,
+            "pf": 2.86,
+            "avg_hold": 9.44,
+            "swap_paid": 107.51
+          },
+          "AMZN": {
+            "trades": 23.0,
+            "win_rate_pct": 65.22,
+            "net_pnl": 370.38,
+            "pf": 1.72,
+            "avg_hold": 11.7,
+            "swap_paid": 83.32
+          },
+          "AVGO": {
+            "trades": 30.0,
+            "win_rate_pct": 23.33,
+            "net_pnl": -738.71,
+            "pf": 0.31,
+            "avg_hold": 10.93,
+            "swap_paid": 106.07
+          },
+          "COST": {
+            "trades": 43.0,
+            "win_rate_pct": 51.16,
+            "net_pnl": 749.0,
+            "pf": 1.95,
+            "avg_hold": 13.0,
+            "swap_paid": 264.55
+          },
+          "GOOGL": {
+            "trades": 15.0,
+            "win_rate_pct": 46.67,
+            "net_pnl": 1331.64,
+            "pf": 5.29,
+            "avg_hold": 25.4,
+            "swap_paid": 250.94
+          },
+          "META": {
+            "trades": 15.0,
+            "win_rate_pct": 46.67,
+            "net_pnl": -322.76,
+            "pf": 0.45,
+            "avg_hold": 10.4,
+            "swap_paid": 55.53
+          },
+          "MSFT": {
+            "trades": 34.0,
+            "win_rate_pct": 52.94,
+            "net_pnl": -22.18,
+            "pf": 0.98,
+            "avg_hold": 12.5,
+            "swap_paid": 228.74
+          },
+          "NFLX": {
+            "trades": 26.0,
+            "win_rate_pct": 53.85,
+            "net_pnl": 268.55,
+            "pf": 1.23,
+            "avg_hold": 11.46,
+            "swap_paid": 106.66
+          },
+          "NVDA": {
+            "trades": 38.0,
+            "win_rate_pct": 50.0,
+            "net_pnl": 817.83,
+            "pf": 2.05,
+            "avg_hold": 12.68,
+            "swap_paid": 144.17
+          },
+          "ORCL": {
+            "trades": 20.0,
+            "win_rate_pct": 35.0,
+            "net_pnl": -98.6,
+            "pf": 0.78,
+            "avg_hold": 12.2,
+            "swap_paid": 98.29
+          },
+          "TSLA": {
+            "trades": 25.0,
+            "win_rate_pct": 52.0,
+            "net_pnl": 3124.59,
+            "pf": 5.66,
+            "avg_hold": 11.4,
+            "swap_paid": 82.42
+          }
+        }
+      },
+      "oos": {
+        "start_date": "2022-01-03",
+        "end_date": "2026-11-23",
+        "final_equity": 29076.22,
+        "total_return_pct": 16.3,
+        "cagr_pct": 3.15,
+        "max_equity_dd_pct": 5.54,
+        "max_close_dd_pct": 5.47,
+        "worst_day_dd_pct": 1.94,
+        "calmar": 0.57,
+        "sharpe": 0.67,
+        "sortino": 0.81,
+        "profit_factor": 1.45,
+        "win_rate_pct": 42.94,
+        "avg_hold_days": 12.03,
+        "trades": 326,
+        "total_swap_paid": 1418.5,
+        "total_costs_paid": 368.68,
+        "avg_leverage": 0.158,
+        "max_leverage_seen": 0.494,
+        "dd_kill_switches": 0,
+        "daily_halts": 0,
+        "yearly_stats": {
+          "2022": {
+            "return_pct": -2.95,
+            "max_dd_pct": 3.42,
+            "worst_day_pct": 1.23,
+            "trades": 39.0
+          },
+          "2023": {
+            "return_pct": 4.7,
+            "max_dd_pct": 5.54,
+            "worst_day_pct": 1.25,
+            "trades": 62.0
+          },
+          "2024": {
+            "return_pct": 6.74,
+            "max_dd_pct": 3.12,
+            "worst_day_pct": 1.48,
+            "trades": 77.0
+          },
+          "2025": {
+            "return_pct": 10.07,
+            "max_dd_pct": 2.9,
+            "worst_day_pct": 1.94,
+            "trades": 71.0
+          },
+          "2026": {
+            "return_pct": -2.59,
+            "max_dd_pct": 3.94,
+            "worst_day_pct": 1.17,
+            "trades": 77.0
+          }
+        },
+        "engine_stats": {
+          "IBS": {
+            "trades": 108.0,
+            "win_rate_pct": 61.11,
+            "net_pnl": -361.05,
+            "pf": 0.75,
+            "avg_hold": 3.08,
+            "swap_paid": 71.05
+          },
+          "TREND": {
+            "trades": 218.0,
+            "win_rate_pct": 33.94,
+            "net_pnl": 4248.25,
+            "pf": 1.6,
+            "avg_hold": 16.46,
+            "swap_paid": 1331.21
+          }
+        },
+        "stock_stats": {
+          "AAPL": {
+            "trades": 26.0,
+            "win_rate_pct": 30.77,
+            "net_pnl": 188.52,
+            "pf": 1.28,
+            "avg_hold": 16.5,
+            "swap_paid": 199.31
+          },
+          "AMD": {
+            "trades": 27.0,
+            "win_rate_pct": 59.26,
+            "net_pnl": 1330.92,
+            "pf": 3.31,
+            "avg_hold": 8.59,
+            "swap_paid": 68.46
+          },
+          "AMZN": {
+            "trades": 28.0,
+            "win_rate_pct": 39.29,
+            "net_pnl": -652.54,
+            "pf": 0.41,
+            "avg_hold": 9.32,
+            "swap_paid": 118.74
+          },
+          "AVGO": {
+            "trades": 42.0,
+            "win_rate_pct": 38.1,
+            "net_pnl": -64.33,
+            "pf": 0.94,
+            "avg_hold": 10.05,
+            "swap_paid": 129.95
+          },
+          "COST": {
+            "trades": 30.0,
+            "win_rate_pct": 40.0,
+            "net_pnl": 413.46,
+            "pf": 1.53,
+            "avg_hold": 12.37,
+            "swap_paid": 181.1
+          },
+          "GOOGL": {
+            "trades": 23.0,
+            "win_rate_pct": 43.48,
+            "net_pnl": 743.73,
+            "pf": 2.62,
+            "avg_hold": 11.83,
+            "swap_paid": 129.31
+          },
+          "META": {
+            "trades": 27.0,
+            "win_rate_pct": 51.85,
+            "net_pnl": 495.27,
+            "pf": 1.66,
+            "avg_hold": 14.11,
+            "swap_paid": 119.66
+          },
+          "MSFT": {
+            "trades": 11.0,
+            "win_rate_pct": 45.45,
+            "net_pnl": 556.76,
+            "pf": 3.2,
+            "avg_hold": 24.64,
+            "swap_paid": 109.06
+          },
+          "NFLX": {
+            "trades": 19.0,
+            "win_rate_pct": 47.37,
+            "net_pnl": 37.63,
+            "pf": 1.1,
+            "avg_hold": 18.37,
+            "swap_paid": 94.49
+          },
+          "NVDA": {
+            "trades": 45.0,
+            "win_rate_pct": 46.67,
+            "net_pnl": 367.78,
+            "pf": 1.33,
+            "avg_hold": 10.2,
+            "swap_paid": 121.42
+          },
+          "ORCL": {
+            "trades": 18.0,
+            "win_rate_pct": 38.89,
+            "net_pnl": 783.12,
+            "pf": 2.32,
+            "avg_hold": 13.67,
+            "swap_paid": 83.36
+          },
+          "TSLA": {
+            "trades": 30.0,
+            "win_rate_pct": 36.67,
+            "net_pnl": -313.14,
+            "pf": 0.57,
+            "avg_hold": 7.6,
+            "swap_paid": 47.39
+          }
+        }
+      },
+      "stress_2x": {
+        "start_date": "2017-09-20",
+        "end_date": "2026-11-23",
+        "final_equity": 36598.67,
+        "total_return_pct": 46.39,
+        "cagr_pct": 4.25,
+        "max_equity_dd_pct": 6.27,
+        "max_close_dd_pct": 6.21,
+        "worst_day_dd_pct": 1.95,
+        "calmar": 0.68,
+        "sharpe": 0.85,
+        "sortino": 1.02,
+        "profit_factor": 1.59,
+        "win_rate_pct": 44.39,
+        "avg_hold_days": 12.33,
+        "trades": 669,
+        "total_swap_paid": 4950.7,
+        "total_costs_paid": 1803.84,
+        "avg_leverage": 0.179,
+        "max_leverage_seen": 0.533,
+        "dd_kill_switches": 0,
+        "daily_halts": 0,
+        "yearly_stats": {
+          "2017": {
+            "return_pct": -1.06,
+            "max_dd_pct": 3.23,
+            "worst_day_pct": 1.41,
+            "trades": 29.0
+          },
+          "2018": {
+            "return_pct": 4.28,
+            "max_dd_pct": 5.38,
+            "worst_day_pct": 1.6,
+            "trades": 85.0
+          },
+          "2019": {
+            "return_pct": 3.71,
+            "max_dd_pct": 4.01,
+            "worst_day_pct": 0.83,
+            "trades": 62.0
+          },
+          "2020": {
+            "return_pct": 10.68,
+            "max_dd_pct": 4.52,
+            "worst_day_pct": 1.46,
+            "trades": 82.0
+          },
+          "2021": {
+            "return_pct": 9.17,
+            "max_dd_pct": 3.61,
+            "worst_day_pct": 1.39,
+            "trades": 86.0
+          },
+          "2022": {
+            "return_pct": -2.64,
+            "max_dd_pct": 3.06,
+            "worst_day_pct": 0.99,
+            "trades": 38.0
+          },
+          "2023": {
+            "return_pct": 3.8,
+            "max_dd_pct": 5.91,
+            "worst_day_pct": 1.27,
+            "trades": 62.0
+          },
+          "2024": {
+            "return_pct": 5.55,
+            "max_dd_pct": 3.38,
+            "worst_day_pct": 1.5,
+            "trades": 77.0
+          },
+          "2025": {
+            "return_pct": 9.05,
+            "max_dd_pct": 2.98,
+            "worst_day_pct": 1.95,
+            "trades": 71.0
+          },
+          "2026": {
+            "return_pct": -2.66,
+            "max_dd_pct": 3.91,
+            "worst_day_pct": 1.07,
+            "trades": 77.0
+          }
+        },
+        "engine_stats": {
+          "IBS": {
+            "trades": 210.0,
+            "win_rate_pct": 65.71,
+            "net_pnl": -32.0,
+            "pf": 0.99,
+            "avg_hold": 2.97,
+            "swap_paid": 212.79
+          },
+          "TREND": {
+            "trades": 459.0,
+            "win_rate_pct": 34.64,
+            "net_pnl": 11402.83,
+            "pf": 1.69,
+            "avg_hold": 16.61,
+            "swap_paid": 4708.7
+          }
+        },
+        "stock_stats": {
+          "AAPL": {
+            "trades": 65.0,
+            "win_rate_pct": 47.69,
+            "net_pnl": 1392.86,
+            "pf": 1.96,
+            "avg_hold": 14.48,
+            "swap_paid": 690.05
+          },
+          "AMD": {
+            "trades": 63.0,
+            "win_rate_pct": 50.79,
+            "net_pnl": 2678.55,
+            "pf": 2.94,
+            "avg_hold": 9.21,
+            "swap_paid": 250.09
+          },
+          "AMZN": {
+            "trades": 51.0,
+            "win_rate_pct": 49.02,
+            "net_pnl": -590.1,
+            "pf": 0.7,
+            "avg_hold": 10.39,
+            "swap_paid": 310.41
+          },
+          "AVGO": {
+            "trades": 72.0,
+            "win_rate_pct": 31.94,
+            "net_pnl": -620.94,
+            "pf": 0.75,
+            "avg_hold": 10.68,
+            "swap_paid": 408.03
+          },
+          "COST": {
+            "trades": 73.0,
+            "win_rate_pct": 45.21,
+            "net_pnl": 965.55,
+            "pf": 1.54,
+            "avg_hold": 12.93,
+            "swap_paid": 673.85
+          },
+          "GOOGL": {
+            "trades": 37.0,
+            "win_rate_pct": 43.24,
+            "net_pnl": 2081.58,
+            "pf": 3.47,
+            "avg_hold": 17.59,
+            "swap_paid": 582.05
+          },
+          "META": {
+            "trades": 42.0,
+            "win_rate_pct": 50.0,
+            "net_pnl": 234.85,
+            "pf": 1.16,
+            "avg_hold": 12.79,
+            "swap_paid": 289.1
+          },
+          "MSFT": {
+            "trades": 46.0,
+            "win_rate_pct": 45.65,
+            "net_pnl": 421.99,
+            "pf": 1.31,
+            "avg_hold": 15.28,
+            "swap_paid": 513.86
+          },
+          "NFLX": {
+            "trades": 45.0,
+            "win_rate_pct": 44.44,
+            "net_pnl": 370.25,
+            "pf": 1.25,
+            "avg_hold": 14.38,
+            "swap_paid": 313.18
+          },
+          "NVDA": {
+            "trades": 82.0,
+            "win_rate_pct": 45.12,
+            "net_pnl": 1078.03,
+            "pf": 1.49,
+            "avg_hold": 11.46,
+            "swap_paid": 415.93
+          },
+          "ORCL": {
+            "trades": 38.0,
+            "win_rate_pct": 36.84,
+            "net_pnl": 769.99,
+            "pf": 1.63,
+            "avg_hold": 12.89,
+            "swap_paid": 276.48
+          },
+          "TSLA": {
+            "trades": 55.0,
+            "win_rate_pct": 43.64,
+            "net_pnl": 2588.2,
+            "pf": 2.7,
+            "avg_hold": 9.42,
+            "swap_paid": 198.45
+          }
+        }
+      }
+    },
+    "SS_P3_CASH_1X_Under8DD": {
+      "config": {
+        "initial_capital": 25000.0,
+        "regime": {
+          "use_macro_gate": true,
+          "vol_caution_pct": 26.0,
+          "vol_crash_pct": 36.0,
+          "yellow_trend_mult": 0.4,
+          "yellow_mr_mult": 0.5
+        },
+        "enable_trend": true,
+        "trend_top_k": 7,
+        "trend_risk_pct": 0.8,
+        "trend_min_rs_score": 0.2,
+        "trend_sl_atr": 2.0,
+        "trend_trail_atr": 3.2,
+        "trend_be_r": 1.0,
+        "trend_fast_exit_ema50": true,
+        "enable_ibs": true,
+        "ibs_top_k": 8,
+        "ibs_risk_pct": 0.55,
+        "ibs_thresh": 0.12,
+        "ibs_require_above_ema50": true,
+        "ibs_sl_atr": 2.5,
+        "ibs_max_hold_days": 5,
+        "enable_connors": false,
+        "connors_risk_pct": 0.5,
+        "connors_rsi_thresh": 12.0,
+        "connors_use_sma8": true,
+        "connors_sl_atr": 2.8,
+        "connors_max_hold_days": 8,
+        "max_drop_atr": 3.5,
+        "max_concurrent_positions": 6,
+        "max_positions_per_stock": 1,
+        "max_cluster_positions": 2,
+        "max_single_stock_notional_pct": 12.5,
+        "stock_vol_ref_pct": 22.0,
+        "max_portfolio_leverage": 0.65,
+        "use_vol_targeting": true,
+        "target_benchmark_vol_pct": 18.0,
+        "min_vol_scale": 0.35,
+        "half_risk_dd_pct": 2.2,
+        "quarter_risk_dd_pct": 4.0,
+        "max_daily_loss_pct": 0.0,
+        "max_total_dd_pct": 7.5,
+        "flatten_on_dd_breach": true,
+        "kill_cooldown_days": 10,
+        "entry_cost_bps": 5.0,
+        "exit_cost_bps": 5.0,
+        "annual_swap_pct": 0.0,
+        "triple_wednesday_swap": false
+      },
+      "full": {
+        "start_date": "2017-09-20",
+        "end_date": "2026-11-23",
+        "final_equity": 52692.73,
+        "total_return_pct": 110.77,
+        "cagr_pct": 8.49,
+        "max_equity_dd_pct": 6.64,
+        "max_close_dd_pct": 6.63,
+        "worst_day_dd_pct": 2.49,
+        "calmar": 1.28,
+        "sharpe": 1.3,
+        "sortino": 1.58,
+        "profit_factor": 2.0,
+        "win_rate_pct": 47.24,
+        "avg_hold_days": 12.3,
+        "trades": 671,
+        "total_swap_paid": 0.0,
+        "total_costs_paid": 1423.92,
+        "avg_leverage": 0.233,
+        "max_leverage_seen": 0.661,
+        "dd_kill_switches": 0,
+        "daily_halts": 0,
+        "yearly_stats": {
+          "2017": {
+            "return_pct": 0.15,
+            "max_dd_pct": 3.18,
+            "worst_day_pct": 1.69,
+            "trades": 29.0
+          },
+          "2018": {
+            "return_pct": 7.47,
+            "max_dd_pct": 5.83,
+            "worst_day_pct": 1.63,
+            "trades": 85.0
+          },
+          "2019": {
+            "return_pct": 7.96,
+            "max_dd_pct": 4.88,
+            "worst_day_pct": 1.15,
+            "trades": 62.0
+          },
+          "2020": {
+            "return_pct": 17.05,
+            "max_dd_pct": 5.22,
+            "worst_day_pct": 1.77,
+            "trades": 83.0
+          },
+          "2021": {
+            "return_pct": 17.11,
+            "max_dd_pct": 4.12,
+            "worst_day_pct": 1.66,
+            "trades": 87.0
+          },
+          "2022": {
+            "return_pct": -3.06,
+            "max_dd_pct": 3.66,
+            "worst_day_pct": 1.27,
+            "trades": 38.0
+          },
+          "2023": {
+            "return_pct": 8.09,
+            "max_dd_pct": 6.64,
+            "worst_day_pct": 1.59,
+            "trades": 62.0
+          },
+          "2024": {
+            "return_pct": 10.82,
+            "max_dd_pct": 3.44,
+            "worst_day_pct": 1.89,
+            "trades": 77.0
+          },
+          "2025": {
+            "return_pct": 16.47,
+            "max_dd_pct": 3.57,
+            "worst_day_pct": 2.49,
+            "trades": 71.0
+          },
+          "2026": {
+            "return_pct": -2.17,
+            "max_dd_pct": 4.65,
+            "worst_day_pct": 1.43,
+            "trades": 77.0
+          }
+        },
+        "engine_stats": {
+          "IBS": {
+            "trades": 212.0,
+            "win_rate_pct": 68.4,
+            "net_pnl": 1047.64,
+            "pf": 1.3,
+            "avg_hold": 2.97,
+            "swap_paid": 0.0
+          },
+          "TREND": {
+            "trades": 459.0,
+            "win_rate_pct": 37.47,
+            "net_pnl": 26167.55,
+            "pf": 2.11,
+            "avg_hold": 16.61,
+            "swap_paid": 0.0
+          }
+        },
+        "stock_stats": {
+          "AAPL": {
+            "trades": 64.0,
+            "win_rate_pct": 48.44,
+            "net_pnl": 3182.45,
+            "pf": 2.68,
+            "avg_hold": 14.64,
+            "swap_paid": 0.0
+          },
+          "AMD": {
+            "trades": 63.0,
+            "win_rate_pct": 52.38,
+            "net_pnl": 5198.79,
+            "pf": 3.57,
+            "avg_hold": 9.21,
+            "swap_paid": 0.0
+          },
+          "AMZN": {
+            "trades": 51.0,
+            "win_rate_pct": 52.94,
+            "net_pnl": -354.53,
+            "pf": 0.88,
+            "avg_hold": 10.39,
+            "swap_paid": 0.0
+          },
+          "AVGO": {
+            "trades": 72.0,
+            "win_rate_pct": 34.72,
+            "net_pnl": -62.77,
+            "pf": 0.98,
+            "avg_hold": 10.68,
+            "swap_paid": 0.0
+          },
+          "COST": {
+            "trades": 73.0,
+            "win_rate_pct": 49.32,
+            "net_pnl": 3074.12,
+            "pf": 2.32,
+            "avg_hold": 12.93,
+            "swap_paid": 0.0
+          },
+          "GOOGL": {
+            "trades": 37.0,
+            "win_rate_pct": 45.95,
+            "net_pnl": 4150.41,
+            "pf": 4.54,
+            "avg_hold": 17.59,
+            "swap_paid": 0.0
+          },
+          "META": {
+            "trades": 42.0,
+            "win_rate_pct": 50.0,
+            "net_pnl": 1072.34,
+            "pf": 1.49,
+            "avg_hold": 12.79,
+            "swap_paid": 0.0
+          },
+          "MSFT": {
+            "trades": 46.0,
+            "win_rate_pct": 50.0,
+            "net_pnl": 1653.05,
+            "pf": 2.0,
+            "avg_hold": 15.28,
+            "swap_paid": 0.0
+          },
+          "NFLX": {
+            "trades": 45.0,
+            "win_rate_pct": 53.33,
+            "net_pnl": 904.86,
+            "pf": 1.42,
+            "avg_hold": 14.38,
+            "swap_paid": 0.0
+          },
+          "NVDA": {
+            "trades": 82.0,
+            "win_rate_pct": 48.78,
+            "net_pnl": 2620.52,
+            "pf": 1.78,
+            "avg_hold": 11.46,
+            "swap_paid": 0.0
+          },
+          "ORCL": {
+            "trades": 39.0,
+            "win_rate_pct": 38.46,
+            "net_pnl": 2128.93,
+            "pf": 2.21,
+            "avg_hold": 12.62,
+            "swap_paid": 0.0
+          },
+          "TSLA": {
+            "trades": 57.0,
+            "win_rate_pct": 43.86,
+            "net_pnl": 3647.03,
+            "pf": 2.58,
+            "avg_hold": 9.21,
+            "swap_paid": 0.0
+          }
+        }
+      },
+      "is": {
+        "start_date": "2017-09-20",
+        "end_date": "2021-12-31",
+        "final_equity": 39821.46,
+        "total_return_pct": 59.29,
+        "cagr_pct": 11.49,
+        "max_equity_dd_pct": 5.83,
+        "max_close_dd_pct": 5.83,
+        "worst_day_dd_pct": 1.77,
+        "calmar": 1.97,
+        "sharpe": 1.66,
+        "sortino": 2.03,
+        "profit_factor": 2.31,
+        "win_rate_pct": 50.0,
+        "avg_hold_days": 12.37,
+        "trades": 346,
+        "total_swap_paid": 0.0,
+        "total_costs_paid": 649.42,
+        "avg_leverage": 0.271,
+        "max_leverage_seen": 0.661,
+        "dd_kill_switches": 0,
+        "daily_halts": 0,
+        "yearly_stats": {
+          "2017": {
+            "return_pct": 0.15,
+            "max_dd_pct": 3.18,
+            "worst_day_pct": 1.69,
+            "trades": 29.0
+          },
+          "2018": {
+            "return_pct": 7.47,
+            "max_dd_pct": 5.83,
+            "worst_day_pct": 1.63,
+            "trades": 85.0
+          },
+          "2019": {
+            "return_pct": 7.96,
+            "max_dd_pct": 4.88,
+            "worst_day_pct": 1.15,
+            "trades": 62.0
+          },
+          "2020": {
+            "return_pct": 17.05,
+            "max_dd_pct": 5.22,
+            "worst_day_pct": 1.77,
+            "trades": 83.0
+          },
+          "2021": {
+            "return_pct": 17.11,
+            "max_dd_pct": 4.12,
+            "worst_day_pct": 1.66,
+            "trades": 87.0
+          }
+        },
+        "engine_stats": {
+          "IBS": {
+            "trades": 106.0,
+            "win_rate_pct": 74.53,
+            "net_pnl": 1436.61,
+            "pf": 2.53,
+            "avg_hold": 2.82,
+            "swap_paid": 0.0
+          },
+          "TREND": {
+            "trades": 240.0,
+            "win_rate_pct": 39.17,
+            "net_pnl": 12460.64,
+            "pf": 2.29,
+            "avg_hold": 16.58,
+            "swap_paid": 0.0
+          }
+        },
+        "stock_stats": {
+          "AAPL": {
+            "trades": 38.0,
+            "win_rate_pct": 57.89,
+            "net_pnl": 2376.14,
+            "pf": 4.62,
+            "avg_hold": 13.24,
+            "swap_paid": 0.0
+          },
+          "AMD": {
+            "trades": 36.0,
+            "win_rate_pct": 47.22,
+            "net_pnl": 1755.92,
+            "pf": 2.75,
+            "avg_hold": 9.44,
+            "swap_paid": 0.0
+          },
+          "AMZN": {
+            "trades": 23.0,
+            "win_rate_pct": 65.22,
+            "net_pnl": 702.23,
+            "pf": 2.2,
+            "avg_hold": 11.7,
+            "swap_paid": 0.0
+          },
+          "AVGO": {
+            "trades": 30.0,
+            "win_rate_pct": 26.67,
+            "net_pnl": -928.48,
+            "pf": 0.3,
+            "avg_hold": 10.93,
+            "swap_paid": 0.0
+          },
+          "COST": {
+            "trades": 43.0,
+            "win_rate_pct": 53.49,
+            "net_pnl": 1743.97,
+            "pf": 2.96,
+            "avg_hold": 13.0,
+            "swap_paid": 0.0
+          },
+          "GOOGL": {
+            "trades": 15.0,
+            "win_rate_pct": 46.67,
+            "net_pnl": 2046.33,
+            "pf": 5.94,
+            "avg_hold": 25.4,
+            "swap_paid": 0.0
+          },
+          "META": {
+            "trades": 15.0,
+            "win_rate_pct": 46.67,
+            "net_pnl": -300.44,
+            "pf": 0.58,
+            "avg_hold": 10.4,
+            "swap_paid": 0.0
+          },
+          "MSFT": {
+            "trades": 34.0,
+            "win_rate_pct": 52.94,
+            "net_pnl": 279.16,
+            "pf": 1.26,
+            "avg_hold": 12.5,
+            "swap_paid": 0.0
+          },
+          "NFLX": {
+            "trades": 26.0,
+            "win_rate_pct": 53.85,
+            "net_pnl": 533.91,
+            "pf": 1.37,
+            "avg_hold": 11.46,
+            "swap_paid": 0.0
+          },
+          "NVDA": {
+            "trades": 38.0,
+            "win_rate_pct": 52.63,
+            "net_pnl": 1512.2,
+            "pf": 2.44,
+            "avg_hold": 12.68,
+            "swap_paid": 0.0
+          },
+          "ORCL": {
+            "trades": 21.0,
+            "win_rate_pct": 38.1,
+            "net_pnl": 83.17,
+            "pf": 1.16,
+            "avg_hold": 11.71,
+            "swap_paid": 0.0
+          },
+          "TSLA": {
+            "trades": 27.0,
+            "win_rate_pct": 51.85,
+            "net_pnl": 4093.14,
+            "pf": 5.41,
+            "avg_hold": 10.81,
+            "swap_paid": 0.0
+          }
+        }
+      },
+      "oos": {
+        "start_date": "2022-01-03",
+        "end_date": "2026-11-23",
+        "final_equity": 32816.73,
+        "total_return_pct": 31.27,
+        "cagr_pct": 5.74,
+        "max_equity_dd_pct": 6.64,
+        "max_close_dd_pct": 6.63,
+        "worst_day_dd_pct": 2.49,
+        "calmar": 0.86,
+        "sharpe": 0.93,
+        "sortino": 1.13,
+        "profit_factor": 1.7,
+        "win_rate_pct": 44.17,
+        "avg_hold_days": 12.03,
+        "trades": 326,
+        "total_swap_paid": 0.0,
+        "total_costs_paid": 487.48,
+        "avg_leverage": 0.198,
+        "max_leverage_seen": 0.624,
+        "dd_kill_switches": 0,
+        "daily_halts": 0,
+        "yearly_stats": {
+          "2022": {
+            "return_pct": -3.63,
+            "max_dd_pct": 4.16,
+            "worst_day_pct": 1.6,
+            "trades": 39.0
+          },
+          "2023": {
+            "return_pct": 7.87,
+            "max_dd_pct": 6.64,
+            "worst_day_pct": 1.59,
+            "trades": 62.0
+          },
+          "2024": {
+            "return_pct": 10.82,
+            "max_dd_pct": 3.44,
+            "worst_day_pct": 1.89,
+            "trades": 77.0
+          },
+          "2025": {
+            "return_pct": 16.47,
+            "max_dd_pct": 3.57,
+            "worst_day_pct": 2.49,
+            "trades": 71.0
+          },
+          "2026": {
+            "return_pct": -2.17,
+            "max_dd_pct": 4.65,
+            "worst_day_pct": 1.43,
+            "trades": 77.0
+          }
+        },
+        "engine_stats": {
+          "IBS": {
+            "trades": 108.0,
+            "win_rate_pct": 62.04,
+            "net_pnl": -336.86,
+            "pf": 0.81,
+            "avg_hold": 3.08,
+            "swap_paid": 0.0
+          },
+          "TREND": {
+            "trades": 218.0,
+            "win_rate_pct": 35.32,
+            "net_pnl": 7856.18,
+            "pf": 1.87,
+            "avg_hold": 16.46,
+            "swap_paid": 0.0
+          }
+        },
+        "stock_stats": {
+          "AAPL": {
+            "trades": 26.0,
+            "win_rate_pct": 34.62,
+            "net_pnl": 437.31,
+            "pf": 1.52,
+            "avg_hold": 16.5,
+            "swap_paid": 0.0
+          },
+          "AMD": {
+            "trades": 27.0,
+            "win_rate_pct": 59.26,
+            "net_pnl": 2036.87,
+            "pf": 3.85,
+            "avg_hold": 8.59,
+            "swap_paid": 0.0
+          },
+          "AMZN": {
+            "trades": 28.0,
+            "win_rate_pct": 42.86,
+            "net_pnl": -658.2,
+            "pf": 0.54,
+            "avg_hold": 9.32,
+            "swap_paid": 0.0
+          },
+          "AVGO": {
+            "trades": 42.0,
+            "win_rate_pct": 38.1,
+            "net_pnl": 115.37,
+            "pf": 1.08,
+            "avg_hold": 10.05,
+            "swap_paid": 0.0
+          },
+          "COST": {
+            "trades": 30.0,
+            "win_rate_pct": 43.33,
+            "net_pnl": 803.96,
+            "pf": 1.88,
+            "avg_hold": 12.37,
+            "swap_paid": 0.0
+          },
+          "GOOGL": {
+            "trades": 23.0,
+            "win_rate_pct": 43.48,
+            "net_pnl": 1203.88,
+            "pf": 3.08,
+            "avg_hold": 11.83,
+            "swap_paid": 0.0
+          },
+          "META": {
+            "trades": 27.0,
+            "win_rate_pct": 51.85,
+            "net_pnl": 855.35,
+            "pf": 1.93,
+            "avg_hold": 14.11,
+            "swap_paid": 0.0
+          },
+          "MSFT": {
+            "trades": 11.0,
+            "win_rate_pct": 45.45,
+            "net_pnl": 900.57,
+            "pf": 3.9,
+            "avg_hold": 24.64,
+            "swap_paid": 0.0
+          },
+          "NFLX": {
+            "trades": 19.0,
+            "win_rate_pct": 52.63,
+            "net_pnl": 239.57,
+            "pf": 1.55,
+            "avg_hold": 18.37,
+            "swap_paid": 0.0
+          },
+          "NVDA": {
+            "trades": 45.0,
+            "win_rate_pct": 46.67,
+            "net_pnl": 703.02,
+            "pf": 1.49,
+            "avg_hold": 10.2,
+            "swap_paid": 0.0
+          },
+          "ORCL": {
+            "trades": 18.0,
+            "win_rate_pct": 38.89,
+            "net_pnl": 1263.0,
+            "pf": 2.65,
+            "avg_hold": 13.67,
+            "swap_paid": 0.0
+          },
+          "TSLA": {
+            "trades": 30.0,
+            "win_rate_pct": 36.67,
+            "net_pnl": -381.38,
+            "pf": 0.6,
+            "avg_hold": 7.6,
+            "swap_paid": 0.0
+          }
+        }
+      },
+      "stress_2x": {
+        "start_date": "2017-09-20",
+        "end_date": "2026-11-23",
+        "final_equity": 50743.41,
+        "total_return_pct": 102.97,
+        "cagr_pct": 8.04,
+        "max_equity_dd_pct": 6.82,
+        "max_close_dd_pct": 6.8,
+        "worst_day_dd_pct": 2.5,
+        "calmar": 1.18,
+        "sharpe": 1.24,
+        "sortino": 1.5,
+        "profit_factor": 1.94,
+        "win_rate_pct": 46.5,
+        "avg_hold_days": 12.3,
+        "trades": 671,
+        "total_swap_paid": 0.0,
+        "total_costs_paid": 2759.99,
+        "avg_leverage": 0.231,
+        "max_leverage_seen": 0.661,
+        "dd_kill_switches": 0,
+        "daily_halts": 0,
+        "yearly_stats": {
+          "2017": {
+            "return_pct": -0.15,
+            "max_dd_pct": 3.34,
+            "worst_day_pct": 1.72,
+            "trades": 29.0
+          },
+          "2018": {
+            "return_pct": 7.27,
+            "max_dd_pct": 5.91,
+            "worst_day_pct": 1.64,
+            "trades": 85.0
+          },
+          "2019": {
+            "return_pct": 7.48,
+            "max_dd_pct": 5.05,
+            "worst_day_pct": 1.15,
+            "trades": 62.0
+          },
+          "2020": {
+            "return_pct": 16.85,
+            "max_dd_pct": 5.26,
+            "worst_day_pct": 1.79,
+            "trades": 83.0
+          },
+          "2021": {
+            "return_pct": 16.24,
+            "max_dd_pct": 4.23,
+            "worst_day_pct": 1.69,
+            "trades": 87.0
+          },
+          "2022": {
+            "return_pct": -3.13,
+            "max_dd_pct": 3.73,
+            "worst_day_pct": 1.27,
+            "trades": 38.0
+          },
+          "2023": {
+            "return_pct": 7.72,
+            "max_dd_pct": 6.82,
+            "worst_day_pct": 1.6,
+            "trades": 62.0
+          },
+          "2024": {
+            "return_pct": 9.88,
+            "max_dd_pct": 3.59,
+            "worst_day_pct": 1.89,
+            "trades": 77.0
+          },
+          "2025": {
+            "return_pct": 15.98,
+            "max_dd_pct": 3.63,
+            "worst_day_pct": 2.5,
+            "trades": 71.0
+          },
+          "2026": {
+            "return_pct": -2.39,
+            "max_dd_pct": 4.08,
+            "worst_day_pct": 1.3,
+            "trades": 77.0
+          }
+        },
+        "engine_stats": {
+          "IBS": {
+            "trades": 212.0,
+            "win_rate_pct": 66.98,
+            "net_pnl": 806.8,
+            "pf": 1.23,
+            "avg_hold": 2.97,
+            "swap_paid": 0.0
+          },
+          "TREND": {
+            "trades": 459.0,
+            "win_rate_pct": 37.04,
+            "net_pnl": 24479.22,
+            "pf": 2.05,
+            "avg_hold": 16.61,
+            "swap_paid": 0.0
+          }
+        },
+        "stock_stats": {
+          "AAPL": {
+            "trades": 64.0,
+            "win_rate_pct": 48.44,
+            "net_pnl": 3012.31,
+            "pf": 2.59,
+            "avg_hold": 14.64,
+            "swap_paid": 0.0
+          },
+          "AMD": {
+            "trades": 63.0,
+            "win_rate_pct": 50.79,
+            "net_pnl": 4679.3,
+            "pf": 3.36,
+            "avg_hold": 9.21,
+            "swap_paid": 0.0
+          },
+          "AMZN": {
+            "trades": 51.0,
+            "win_rate_pct": 52.94,
+            "net_pnl": -443.79,
+            "pf": 0.85,
+            "avg_hold": 10.39,
+            "swap_paid": 0.0
+          },
+          "AVGO": {
+            "trades": 72.0,
+            "win_rate_pct": 33.33,
+            "net_pnl": -218.89,
+            "pf": 0.94,
+            "avg_hold": 10.68,
+            "swap_paid": 0.0
+          },
+          "COST": {
+            "trades": 73.0,
+            "win_rate_pct": 47.95,
+            "net_pnl": 2870.11,
+            "pf": 2.23,
+            "avg_hold": 12.93,
+            "swap_paid": 0.0
+          },
+          "GOOGL": {
+            "trades": 37.0,
+            "win_rate_pct": 45.95,
+            "net_pnl": 4046.71,
+            "pf": 4.65,
+            "avg_hold": 17.59,
+            "swap_paid": 0.0
+          },
+          "META": {
+            "trades": 42.0,
+            "win_rate_pct": 50.0,
+            "net_pnl": 998.42,
+            "pf": 1.47,
+            "avg_hold": 12.79,
+            "swap_paid": 0.0
+          },
+          "MSFT": {
+            "trades": 46.0,
+            "win_rate_pct": 50.0,
+            "net_pnl": 1431.95,
+            "pf": 1.85,
+            "avg_hold": 15.28,
+            "swap_paid": 0.0
+          },
+          "NFLX": {
+            "trades": 45.0,
+            "win_rate_pct": 48.89,
+            "net_pnl": 802.64,
+            "pf": 1.37,
+            "avg_hold": 14.38,
+            "swap_paid": 0.0
+          },
+          "NVDA": {
+            "trades": 82.0,
+            "win_rate_pct": 48.78,
+            "net_pnl": 2591.99,
+            "pf": 1.81,
+            "avg_hold": 11.46,
+            "swap_paid": 0.0
+          },
+          "ORCL": {
+            "trades": 39.0,
+            "win_rate_pct": 38.46,
+            "net_pnl": 1937.43,
+            "pf": 2.09,
+            "avg_hold": 12.62,
+            "swap_paid": 0.0
+          },
+          "TSLA": {
+            "trades": 57.0,
+            "win_rate_pct": 43.86,
+            "net_pnl": 3577.84,
+            "pf": 2.59,
+            "avg_hold": 9.21,
+            "swap_paid": 0.0
+          }
+        }
+      }
+    },
+    "SS_P4_SINGLE_STOCK_Fallback": {
+      "config": {
+        "initial_capital": 25000.0,
+        "regime": {
+          "use_macro_gate": true,
+          "vol_caution_pct": 26.0,
+          "vol_crash_pct": 36.0,
+          "yellow_trend_mult": 0.4,
+          "yellow_mr_mult": 0.5
+        },
+        "enable_trend": true,
+        "trend_top_k": 1,
+        "trend_risk_pct": 0.65,
+        "trend_min_rs_score": 0.2,
+        "trend_sl_atr": 2.0,
+        "trend_trail_atr": 3.2,
+        "trend_be_r": 1.0,
+        "trend_fast_exit_ema50": true,
+        "enable_ibs": true,
+        "ibs_top_k": 1,
+        "ibs_risk_pct": 0.5,
+        "ibs_thresh": 0.12,
+        "ibs_require_above_ema50": true,
+        "ibs_sl_atr": 2.5,
+        "ibs_max_hold_days": 5,
+        "enable_connors": false,
+        "connors_risk_pct": 0.5,
+        "connors_rsi_thresh": 12.0,
+        "connors_use_sma8": true,
+        "connors_sl_atr": 2.8,
+        "connors_max_hold_days": 8,
+        "max_drop_atr": 3.5,
+        "max_concurrent_positions": 1,
+        "max_positions_per_stock": 1,
+        "max_cluster_positions": 1,
+        "max_single_stock_notional_pct": 25.0,
+        "stock_vol_ref_pct": 24.0,
+        "max_portfolio_leverage": 0.25,
+        "use_vol_targeting": true,
+        "target_benchmark_vol_pct": 16.5,
+        "min_vol_scale": 0.35,
+        "half_risk_dd_pct": 2.2,
+        "quarter_risk_dd_pct": 4.0,
+        "max_daily_loss_pct": 0.0,
+        "max_total_dd_pct": 7.5,
+        "flatten_on_dd_breach": true,
+        "kill_cooldown_days": 10,
+        "entry_cost_bps": 5.0,
+        "exit_cost_bps": 5.0,
+        "annual_swap_pct": 7.0,
+        "triple_wednesday_swap": true
+      },
+      "per_stock": {
+        "NVDA": {
+          "start_date": "2017-09-20",
+          "end_date": "2026-11-23",
+          "final_equity": 27573.62,
+          "total_return_pct": 10.29,
+          "cagr_pct": 1.08,
+          "max_equity_dd_pct": 4.18,
+          "max_close_dd_pct": 4.16,
+          "worst_day_dd_pct": 0.91,
+          "calmar": 0.26,
+          "sharpe": 0.61,
+          "sortino": 0.61,
+          "profit_factor": 1.84,
+          "win_rate_pct": 44.12,
+          "avg_hold_days": 10.87,
+          "trades": 102,
+          "total_swap_paid": 486.93,
+          "total_costs_paid": 147.25,
+          "avg_leverage": 0.03,
+          "max_leverage_seen": 0.159,
+          "dd_kill_switches": 0,
+          "daily_halts": 0,
+          "yearly_stats": {
+            "2017": {
+              "return_pct": 0.28,
+              "max_dd_pct": 1.3,
+              "worst_day_pct": 0.44,
+              "trades": 4.0
+            },
+            "2018": {
+              "return_pct": -0.93,
+              "max_dd_pct": 3.57,
+              "worst_day_pct": 0.48,
+              "trades": 12.0
+            },
+            "2019": {
+              "return_pct": 0.51,
+              "max_dd_pct": 0.76,
+              "worst_day_pct": 0.37,
+              "trades": 5.0
+            },
+            "2020": {
+              "return_pct": 1.37,
+              "max_dd_pct": 1.77,
+              "worst_day_pct": 0.71,
+              "trades": 12.0
+            },
+            "2021": {
+              "return_pct": 2.95,
+              "max_dd_pct": 1.11,
+              "worst_day_pct": 0.41,
+              "trades": 14.0
+            },
+            "2022": {
+              "return_pct": -0.16,
+              "max_dd_pct": 0.28,
+              "worst_day_pct": 0.09,
+              "trades": 4.0
+            },
+            "2023": {
+              "return_pct": 3.03,
+              "max_dd_pct": 1.29,
+              "worst_day_pct": 0.67,
+              "trades": 8.0
+            },
+            "2024": {
+              "return_pct": 3.78,
+              "max_dd_pct": 2.36,
+              "worst_day_pct": 0.91,
+              "trades": 14.0
+            },
+            "2025": {
+              "return_pct": 0.11,
+              "max_dd_pct": 1.92,
+              "worst_day_pct": 0.42,
+              "trades": 9.0
+            },
+            "2026": {
+              "return_pct": -0.96,
+              "max_dd_pct": 1.64,
+              "worst_day_pct": 0.35,
+              "trades": 20.0
+            }
+          },
+          "engine_stats": {
+            "IBS": {
+              "trades": 37.0,
+              "win_rate_pct": 64.86,
+              "net_pnl": 365.74,
+              "pf": 1.85,
+              "avg_hold": 3.22,
+              "swap_paid": 32.21
+            },
+            "TREND": {
+              "trades": 65.0,
+              "win_rate_pct": 32.31,
+              "net_pnl": 2207.87,
+              "pf": 1.84,
+              "avg_hold": 15.23,
+              "swap_paid": 454.72
+            }
+          },
+          "stock_stats": {
+            "NVDA": {
+              "trades": 102.0,
+              "win_rate_pct": 44.12,
+              "net_pnl": 2573.62,
+              "pf": 1.84,
+              "avg_hold": 10.87,
+              "swap_paid": 486.93
+            }
+          }
+        },
+        "AAPL": {
+          "start_date": "2017-09-20",
+          "end_date": "2026-11-23",
+          "final_equity": 28698.97,
+          "total_return_pct": 14.8,
+          "cagr_pct": 1.52,
+          "max_equity_dd_pct": 2.26,
+          "max_close_dd_pct": 2.2,
+          "worst_day_dd_pct": 0.75,
+          "calmar": 0.67,
+          "sharpe": 0.74,
+          "sortino": 0.76,
+          "profit_factor": 2.19,
+          "win_rate_pct": 47.13,
+          "avg_hold_days": 12.63,
+          "trades": 87,
+          "total_swap_paid": 1029.24,
+          "total_costs_paid": 248.08,
+          "avg_leverage": 0.06,
+          "max_leverage_seen": 0.246,
+          "dd_kill_switches": 0,
+          "daily_halts": 0,
+          "yearly_stats": {
+            "2017": {
+              "return_pct": 0.17,
+              "max_dd_pct": 1.35,
+              "worst_day_pct": 0.72,
+              "trades": 4.0
+            },
+            "2018": {
+              "return_pct": 2.68,
+              "max_dd_pct": 1.49,
+              "worst_day_pct": 0.39,
+              "trades": 16.0
+            },
+            "2019": {
+              "return_pct": 5.13,
+              "max_dd_pct": 1.27,
+              "worst_day_pct": 0.46,
+              "trades": 4.0
+            },
+            "2020": {
+              "return_pct": 2.42,
+              "max_dd_pct": 1.85,
+              "worst_day_pct": 0.73,
+              "trades": 14.0
+            },
+            "2021": {
+              "return_pct": 2.08,
+              "max_dd_pct": 1.76,
+              "worst_day_pct": 0.7,
+              "trades": 16.0
+            },
+            "2022": {
+              "return_pct": -0.55,
+              "max_dd_pct": 0.63,
+              "worst_day_pct": 0.11,
+              "trades": 5.0
+            },
+            "2023": {
+              "return_pct": 1.66,
+              "max_dd_pct": 1.54,
+              "worst_day_pct": 0.75,
+              "trades": 3.0
+            },
+            "2024": {
+              "return_pct": 1.51,
+              "max_dd_pct": 1.76,
+              "worst_day_pct": 0.46,
+              "trades": 8.0
+            },
+            "2025": {
+              "return_pct": -0.76,
+              "max_dd_pct": 1.62,
+              "worst_day_pct": 0.63,
+              "trades": 9.0
+            },
+            "2026": {
+              "return_pct": -0.29,
+              "max_dd_pct": 1.52,
+              "worst_day_pct": 0.64,
+              "trades": 8.0
+            }
+          },
+          "engine_stats": {
+            "IBS": {
+              "trades": 34.0,
+              "win_rate_pct": 61.76,
+              "net_pnl": 96.7,
+              "pf": 1.14,
+              "avg_hold": 3.0,
+              "swap_paid": 43.03
+            },
+            "TREND": {
+              "trades": 53.0,
+              "win_rate_pct": 37.74,
+              "net_pnl": 3608.33,
+              "pf": 2.5,
+              "avg_hold": 18.81,
+              "swap_paid": 984.38
+            }
+          },
+          "stock_stats": {
+            "AAPL": {
+              "trades": 87.0,
+              "win_rate_pct": 47.13,
+              "net_pnl": 3705.03,
+              "pf": 2.19,
+              "avg_hold": 12.63,
+              "swap_paid": 1027.41
+            }
+          }
+        },
+        "MSFT": {
+          "start_date": "2017-09-20",
+          "end_date": "2026-11-23",
+          "final_equity": 28248.21,
+          "total_return_pct": 12.99,
+          "cagr_pct": 1.34,
+          "max_equity_dd_pct": 3.14,
+          "max_close_dd_pct": 3.14,
+          "worst_day_dd_pct": 0.83,
+          "calmar": 0.43,
+          "sharpe": 0.65,
+          "sortino": 0.62,
+          "profit_factor": 2.12,
+          "win_rate_pct": 53.09,
+          "avg_hold_days": 14.06,
+          "trades": 81,
+          "total_swap_paid": 1091.52,
+          "total_costs_paid": 245.38,
+          "avg_leverage": 0.064,
+          "max_leverage_seen": 0.276,
+          "dd_kill_switches": 0,
+          "daily_halts": 0,
+          "yearly_stats": {
+            "2017": {
+              "return_pct": 1.81,
+              "max_dd_pct": 0.99,
+              "worst_day_pct": 0.51,
+              "trades": 5.0
+            },
+            "2018": {
+              "return_pct": 1.64,
+              "max_dd_pct": 1.52,
+              "worst_day_pct": 0.66,
+              "trades": 10.0
+            },
+            "2019": {
+              "return_pct": 3.78,
+              "max_dd_pct": 1.61,
+              "worst_day_pct": 0.63,
+              "trades": 10.0
+            },
+            "2020": {
+              "return_pct": 2.23,
+              "max_dd_pct": 1.45,
+              "worst_day_pct": 0.63,
+              "trades": 11.0
+            },
+            "2021": {
+              "return_pct": 1.82,
+              "max_dd_pct": 1.36,
+              "worst_day_pct": 0.47,
+              "trades": 13.0
+            },
+            "2022": {
+              "return_pct": -0.29,
+              "max_dd_pct": 0.29,
+              "worst_day_pct": 0.09,
+              "trades": 3.0
+            },
+            "2023": {
+              "return_pct": 2.52,
+              "max_dd_pct": 1.49,
+              "worst_day_pct": 0.41,
+              "trades": 9.0
+            },
+            "2024": {
+              "return_pct": 0.68,
+              "max_dd_pct": 1.74,
+              "worst_day_pct": 0.83,
+              "trades": 9.0
+            },
+            "2025": {
+              "return_pct": -0.61,
+              "max_dd_pct": 1.76,
+              "worst_day_pct": 0.67,
+              "trades": 6.0
+            },
+            "2026": {
+              "return_pct": -1.19,
+              "max_dd_pct": 1.19,
+              "worst_day_pct": 0.54,
+              "trades": 5.0
+            }
+          },
+          "engine_stats": {
+            "IBS": {
+              "trades": 25.0,
+              "win_rate_pct": 84.0,
+              "net_pnl": 290.65,
+              "pf": 2.09,
+              "avg_hold": 2.76,
+              "swap_paid": 37.72
+            },
+            "TREND": {
+              "trades": 56.0,
+              "win_rate_pct": 39.29,
+              "net_pnl": 2957.56,
+              "pf": 2.12,
+              "avg_hold": 19.11,
+              "swap_paid": 1053.8
+            }
+          },
+          "stock_stats": {
+            "MSFT": {
+              "trades": 81.0,
+              "win_rate_pct": 53.09,
+              "net_pnl": 3248.21,
+              "pf": 2.12,
+              "avg_hold": 14.06,
+              "swap_paid": 1091.52
+            }
+          }
+        },
+        "AMZN": {
+          "start_date": "2017-09-20",
+          "end_date": "2026-11-23",
+          "final_equity": 25065.03,
+          "total_return_pct": 0.26,
+          "cagr_pct": 0.03,
+          "max_equity_dd_pct": 4.95,
+          "max_close_dd_pct": 4.95,
+          "worst_day_dd_pct": 1.26,
+          "calmar": 0.01,
+          "sharpe": 0.03,
+          "sortino": 0.02,
+          "profit_factor": 1.02,
+          "win_rate_pct": 42.86,
+          "avg_hold_days": 10.54,
+          "trades": 91,
+          "total_swap_paid": 556.77,
+          "total_costs_paid": 175.76,
+          "avg_leverage": 0.035,
+          "max_leverage_seen": 0.249,
+          "dd_kill_switches": 0,
+          "daily_halts": 0,
+          "yearly_stats": {
+            "2017": {
+              "return_pct": -0.47,
+              "max_dd_pct": 1.36,
+              "worst_day_pct": 0.51,
+              "trades": 3.0
+            },
+            "2018": {
+              "return_pct": 3.59,
+              "max_dd_pct": 2.16,
+              "worst_day_pct": 0.87,
+              "trades": 15.0
+            },
+            "2019": {
+              "return_pct": 1.06,
+              "max_dd_pct": 1.51,
+              "worst_day_pct": 0.52,
+              "trades": 7.0
+            },
+            "2020": {
+              "return_pct": -0.52,
+              "max_dd_pct": 1.51,
+              "worst_day_pct": 0.76,
+              "trades": 12.0
+            },
+            "2021": {
+              "return_pct": -2.38,
+              "max_dd_pct": 2.7,
+              "worst_day_pct": 1.26,
+              "trades": 13.0
+            },
+            "2022": {
+              "return_pct": -0.05,
+              "max_dd_pct": 0.06,
+              "worst_day_pct": 0.03,
+              "trades": 2.0
+            },
+            "2023": {
+              "return_pct": -0.24,
+              "max_dd_pct": 1.27,
+              "worst_day_pct": 0.3,
+              "trades": 7.0
+            },
+            "2024": {
+              "return_pct": 1.49,
+              "max_dd_pct": 0.77,
+              "worst_day_pct": 0.58,
+              "trades": 10.0
+            },
+            "2025": {
+              "return_pct": -0.25,
+              "max_dd_pct": 1.27,
+              "worst_day_pct": 0.56,
+              "trades": 10.0
+            },
+            "2026": {
+              "return_pct": -1.85,
+              "max_dd_pct": 2.05,
+              "worst_day_pct": 0.3,
+              "trades": 12.0
+            }
+          },
+          "engine_stats": {
+            "IBS": {
+              "trades": 34.0,
+              "win_rate_pct": 55.88,
+              "net_pnl": 226.95,
+              "pf": 1.48,
+              "avg_hold": 3.21,
+              "swap_paid": 37.99
+            },
+            "TREND": {
+              "trades": 57.0,
+              "win_rate_pct": 35.09,
+              "net_pnl": -161.92,
+              "pf": 0.95,
+              "avg_hold": 14.91,
+              "swap_paid": 518.78
+            }
+          },
+          "stock_stats": {
+            "AMZN": {
+              "trades": 91.0,
+              "win_rate_pct": 42.86,
+              "net_pnl": 65.03,
+              "pf": 1.02,
+              "avg_hold": 10.54,
+              "swap_paid": 556.77
+            }
+          }
+        },
+        "GOOGL": {
+          "start_date": "2017-09-20",
+          "end_date": "2026-11-23",
+          "final_equity": 27633.39,
+          "total_return_pct": 10.53,
+          "cagr_pct": 1.1,
+          "max_equity_dd_pct": 3.57,
+          "max_close_dd_pct": 3.51,
+          "worst_day_dd_pct": 1.68,
+          "calmar": 0.31,
+          "sharpe": 0.49,
+          "sortino": 0.46,
+          "profit_factor": 1.81,
+          "win_rate_pct": 42.31,
+          "avg_hold_days": 14.32,
+          "trades": 78,
+          "total_swap_paid": 940.54,
+          "total_costs_paid": 187.8,
+          "avg_leverage": 0.058,
+          "max_leverage_seen": 0.255,
+          "dd_kill_switches": 0,
+          "daily_halts": 0,
+          "yearly_stats": {
+            "2017": {
+              "return_pct": 1.51,
+              "max_dd_pct": 1.08,
+              "worst_day_pct": 0.73,
+              "trades": 1.0
+            },
+            "2018": {
+              "return_pct": 0.44,
+              "max_dd_pct": 2.11,
+              "worst_day_pct": 0.98,
+              "trades": 9.0
+            },
+            "2019": {
+              "return_pct": 0.63,
+              "max_dd_pct": 1.95,
+              "worst_day_pct": 1.68,
+              "trades": 5.0
+            },
+            "2020": {
+              "return_pct": -0.7,
+              "max_dd_pct": 2.54,
+              "worst_day_pct": 0.89,
+              "trades": 14.0
+            },
+            "2021": {
+              "return_pct": 2.35,
+              "max_dd_pct": 2.59,
+              "worst_day_pct": 0.5,
+              "trades": 11.0
+            },
+            "2022": {
+              "return_pct": -0.1,
+              "max_dd_pct": 0.1,
+              "worst_day_pct": 0.03,
+              "trades": 4.0
+            },
+            "2023": {
+              "return_pct": -0.51,
+              "max_dd_pct": 1.55,
+              "worst_day_pct": 0.37,
+              "trades": 10.0
+            },
+            "2024": {
+              "return_pct": 2.7,
+              "max_dd_pct": 1.24,
+              "worst_day_pct": 0.61,
+              "trades": 6.0
+            },
+            "2025": {
+              "return_pct": 5.08,
+              "max_dd_pct": 2.1,
+              "worst_day_pct": 0.81,
+              "trades": 8.0
+            },
+            "2026": {
+              "return_pct": -1.17,
+              "max_dd_pct": 2.27,
+              "worst_day_pct": 0.81,
+              "trades": 10.0
+            }
+          },
+          "engine_stats": {
+            "IBS": {
+              "trades": 28.0,
+              "win_rate_pct": 60.71,
+              "net_pnl": 72.93,
+              "pf": 1.18,
+              "avg_hold": 2.64,
+              "swap_paid": 27.16
+            },
+            "TREND": {
+              "trades": 50.0,
+              "win_rate_pct": 32.0,
+              "net_pnl": 2560.46,
+              "pf": 1.89,
+              "avg_hold": 20.86,
+              "swap_paid": 913.38
+            }
+          },
+          "stock_stats": {
+            "GOOGL": {
+              "trades": 78.0,
+              "win_rate_pct": 42.31,
+              "net_pnl": 2633.39,
+              "pf": 1.81,
+              "avg_hold": 14.32,
+              "swap_paid": 940.54
+            }
+          }
+        },
+        "META": {
+          "start_date": "2017-09-20",
+          "end_date": "2026-11-23",
+          "final_equity": 24776.96,
+          "total_return_pct": -0.89,
+          "cagr_pct": -0.1,
+          "max_equity_dd_pct": 3.97,
+          "max_close_dd_pct": 3.88,
+          "worst_day_dd_pct": 2.47,
+          "calmar": -0.02,
+          "sharpe": -0.04,
+          "sortino": -0.03,
+          "profit_factor": 0.92,
+          "win_rate_pct": 47.73,
+          "avg_hold_days": 11.26,
+          "trades": 88,
+          "total_swap_paid": 503.46,
+          "total_costs_paid": 140.95,
+          "avg_leverage": 0.033,
+          "max_leverage_seen": 0.219,
+          "dd_kill_switches": 0,
+          "daily_halts": 0,
+          "yearly_stats": {
+            "2017": {
+              "return_pct": -0.85,
+              "max_dd_pct": 1.66,
+              "worst_day_pct": 0.67,
+              "trades": 3.0
+            },
+            "2018": {
+              "return_pct": -2.37,
+              "max_dd_pct": 3.06,
+              "worst_day_pct": 2.47,
+              "trades": 7.0
+            },
+            "2019": {
+              "return_pct": 1.33,
+              "max_dd_pct": 0.63,
+              "worst_day_pct": 0.28,
+              "trades": 9.0
+            },
+            "2020": {
+              "return_pct": -0.97,
+              "max_dd_pct": 1.89,
+              "worst_day_pct": 0.92,
+              "trades": 19.0
+            },
+            "2021": {
+              "return_pct": 0.09,
+              "max_dd_pct": 1.19,
+              "worst_day_pct": 0.38,
+              "trades": 10.0
+            },
+            "2022": {
+              "return_pct": -0.13,
+              "max_dd_pct": 0.15,
+              "worst_day_pct": 0.12,
+              "trades": 1.0
+            },
+            "2023": {
+              "return_pct": 0.44,
+              "max_dd_pct": 1.16,
+              "worst_day_pct": 0.29,
+              "trades": 10.0
+            },
+            "2024": {
+              "return_pct": 2.87,
+              "max_dd_pct": 1.87,
+              "worst_day_pct": 0.6,
+              "trades": 13.0
+            },
+            "2025": {
+              "return_pct": -0.6,
+              "max_dd_pct": 2.56,
+              "worst_day_pct": 1.53,
+              "trades": 9.0
+            },
+            "2026": {
+              "return_pct": -0.62,
+              "max_dd_pct": 1.21,
+              "worst_day_pct": 0.36,
+              "trades": 7.0
+            }
+          },
+          "engine_stats": {
+            "IBS": {
+              "trades": 36.0,
+              "win_rate_pct": 72.22,
+              "net_pnl": 254.52,
+              "pf": 2.48,
+              "avg_hold": 3.03,
+              "swap_paid": 20.21
+            },
+            "TREND": {
+              "trades": 52.0,
+              "win_rate_pct": 30.77,
+              "net_pnl": -477.56,
+              "pf": 0.82,
+              "avg_hold": 16.96,
+              "swap_paid": 483.24
+            }
+          },
+          "stock_stats": {
+            "META": {
+              "trades": 88.0,
+              "win_rate_pct": 47.73,
+              "net_pnl": -223.04,
+              "pf": 0.92,
+              "avg_hold": 11.26,
+              "swap_paid": 503.46
+            }
+          }
+        },
+        "AVGO": {
+          "start_date": "2017-09-20",
+          "end_date": "2026-11-23",
+          "final_equity": 26132.2,
+          "total_return_pct": 4.53,
+          "cagr_pct": 0.48,
+          "max_equity_dd_pct": 4.02,
+          "max_close_dd_pct": 3.94,
+          "worst_day_dd_pct": 1.19,
+          "calmar": 0.12,
+          "sharpe": 0.25,
+          "sortino": 0.25,
+          "profit_factor": 1.35,
+          "win_rate_pct": 41.0,
+          "avg_hold_days": 10.61,
+          "trades": 100,
+          "total_swap_paid": 491.09,
+          "total_costs_paid": 157.57,
+          "avg_leverage": 0.032,
+          "max_leverage_seen": 0.168,
+          "dd_kill_switches": 0,
+          "daily_halts": 0,
+          "yearly_stats": {
+            "2017": {
+              "return_pct": -1.9,
+              "max_dd_pct": 2.21,
+              "worst_day_pct": 0.54,
+              "trades": 5.0
+            },
+            "2018": {
+              "return_pct": -1.11,
+              "max_dd_pct": 1.33,
+              "worst_day_pct": 0.36,
+              "trades": 11.0
+            },
+            "2019": {
+              "return_pct": -0.06,
+              "max_dd_pct": 1.3,
+              "worst_day_pct": 0.49,
+              "trades": 9.0
+            },
+            "2020": {
+              "return_pct": 0.19,
+              "max_dd_pct": 1.17,
+              "worst_day_pct": 0.48,
+              "trades": 13.0
+            },
+            "2021": {
+              "return_pct": 1.38,
+              "max_dd_pct": 1.0,
+              "worst_day_pct": 0.37,
+              "trades": 11.0
+            },
+            "2022": {
+              "return_pct": -0.67,
+              "max_dd_pct": 0.89,
+              "worst_day_pct": 0.35,
+              "trades": 8.0
+            },
+            "2023": {
+              "return_pct": 4.04,
+              "max_dd_pct": 1.01,
+              "worst_day_pct": 0.62,
+              "trades": 12.0
+            },
+            "2024": {
+              "return_pct": 0.65,
+              "max_dd_pct": 2.85,
+              "worst_day_pct": 0.67,
+              "trades": 19.0
+            },
+            "2025": {
+              "return_pct": 1.71,
+              "max_dd_pct": 1.54,
+              "worst_day_pct": 0.78,
+              "trades": 10.0
+            },
+            "2026": {
+              "return_pct": 0.33,
+              "max_dd_pct": 1.35,
+              "worst_day_pct": 1.19,
+              "trades": 2.0
+            }
+          },
+          "engine_stats": {
+            "IBS": {
+              "trades": 31.0,
+              "win_rate_pct": 64.52,
+              "net_pnl": 356.94,
+              "pf": 2.52,
+              "avg_hold": 2.55,
+              "swap_paid": 21.73
+            },
+            "TREND": {
+              "trades": 69.0,
+              "win_rate_pct": 30.43,
+              "net_pnl": 775.26,
+              "pf": 1.26,
+              "avg_hold": 14.23,
+              "swap_paid": 469.36
+            }
+          },
+          "stock_stats": {
+            "AVGO": {
+              "trades": 100.0,
+              "win_rate_pct": 41.0,
+              "net_pnl": 1132.2,
+              "pf": 1.35,
+              "avg_hold": 10.61,
+              "swap_paid": 491.09
+            }
+          }
+        },
+        "AMD": {
+          "start_date": "2017-09-20",
+          "end_date": "2026-11-23",
+          "final_equity": 28582.15,
+          "total_return_pct": 14.33,
+          "cagr_pct": 1.47,
+          "max_equity_dd_pct": 4.02,
+          "max_close_dd_pct": 3.97,
+          "worst_day_dd_pct": 0.79,
+          "calmar": 0.37,
+          "sharpe": 0.63,
+          "sortino": 0.64,
+          "profit_factor": 1.95,
+          "win_rate_pct": 46.32,
+          "avg_hold_days": 9.23,
+          "trades": 95,
+          "total_swap_paid": 409.32,
+          "total_costs_paid": 132.79,
+          "avg_leverage": 0.025,
+          "max_leverage_seen": 0.136,
+          "dd_kill_switches": 0,
+          "daily_halts": 0,
+          "yearly_stats": {
+            "2017": {
+              "return_pct": -0.18,
+              "max_dd_pct": 0.46,
+              "worst_day_pct": 0.26,
+              "trades": 2.0
+            },
+            "2018": {
+              "return_pct": 4.46,
+              "max_dd_pct": 1.91,
+              "worst_day_pct": 0.64,
+              "trades": 9.0
+            },
+            "2019": {
+              "return_pct": 2.19,
+              "max_dd_pct": 2.16,
+              "worst_day_pct": 0.58,
+              "trades": 14.0
+            },
+            "2020": {
+              "return_pct": 0.5,
+              "max_dd_pct": 2.84,
+              "worst_day_pct": 0.79,
+              "trades": 15.0
+            },
+            "2021": {
+              "return_pct": 0.99,
+              "max_dd_pct": 1.61,
+              "worst_day_pct": 0.74,
+              "trades": 15.0
+            },
+            "2022": {
+              "return_pct": -0.2,
+              "max_dd_pct": 0.28,
+              "worst_day_pct": 0.1,
+              "trades": 2.0
+            },
+            "2023": {
+              "return_pct": 2.33,
+              "max_dd_pct": 2.1,
+              "worst_day_pct": 0.64,
+              "trades": 7.0
+            },
+            "2024": {
+              "return_pct": -2.48,
+              "max_dd_pct": 3.76,
+              "worst_day_pct": 0.66,
+              "trades": 10.0
+            },
+            "2025": {
+              "return_pct": 3.45,
+              "max_dd_pct": 1.58,
+              "worst_day_pct": 0.64,
+              "trades": 9.0
+            },
+            "2026": {
+              "return_pct": 2.61,
+              "max_dd_pct": 1.8,
+              "worst_day_pct": 0.64,
+              "trades": 12.0
+            }
+          },
+          "engine_stats": {
+            "IBS": {
+              "trades": 33.0,
+              "win_rate_pct": 60.61,
+              "net_pnl": -114.43,
+              "pf": 0.82,
+              "avg_hold": 3.52,
+              "swap_paid": 29.41
+            },
+            "TREND": {
+              "trades": 62.0,
+              "win_rate_pct": 38.71,
+              "net_pnl": 3696.59,
+              "pf": 2.19,
+              "avg_hold": 12.27,
+              "swap_paid": 379.92
+            }
+          },
+          "stock_stats": {
+            "AMD": {
+              "trades": 95.0,
+              "win_rate_pct": 46.32,
+              "net_pnl": 3582.15,
+              "pf": 1.95,
+              "avg_hold": 9.23,
+              "swap_paid": 409.32
+            }
+          }
+        },
+        "TSLA": {
+          "start_date": "2017-09-20",
+          "end_date": "2026-11-23",
+          "final_equity": 29126.96,
+          "total_return_pct": 16.51,
+          "cagr_pct": 1.68,
+          "max_equity_dd_pct": 3.88,
+          "max_close_dd_pct": 3.82,
+          "worst_day_dd_pct": 1.72,
+          "calmar": 0.43,
+          "sharpe": 0.74,
+          "sortino": 0.67,
+          "profit_factor": 1.9,
+          "win_rate_pct": 38.14,
+          "avg_hold_days": 7.56,
+          "trades": 97,
+          "total_swap_paid": 289.55,
+          "total_costs_paid": 122.26,
+          "avg_leverage": 0.017,
+          "max_leverage_seen": 0.176,
+          "dd_kill_switches": 0,
+          "daily_halts": 0,
+          "yearly_stats": {
+            "2017": {
+              "return_pct": -0.6,
+              "max_dd_pct": 0.8,
+              "worst_day_pct": 0.44,
+              "trades": 3.0
+            },
+            "2018": {
+              "return_pct": -2.88,
+              "max_dd_pct": 3.17,
+              "worst_day_pct": 0.61,
+              "trades": 14.0
+            },
+            "2019": {
+              "return_pct": 4.54,
+              "max_dd_pct": 0.99,
+              "worst_day_pct": 0.55,
+              "trades": 2.0
+            },
+            "2020": {
+              "return_pct": 13.39,
+              "max_dd_pct": 1.84,
+              "worst_day_pct": 1.72,
+              "trades": 15.0
+            },
+            "2021": {
+              "return_pct": 1.61,
+              "max_dd_pct": 2.11,
+              "worst_day_pct": 0.52,
+              "trades": 11.0
+            },
+            "2022": {
+              "return_pct": -0.39,
+              "max_dd_pct": 0.58,
+              "worst_day_pct": 0.09,
+              "trades": 8.0
+            },
+            "2023": {
+              "return_pct": 0.92,
+              "max_dd_pct": 1.71,
+              "worst_day_pct": 0.66,
+              "trades": 9.0
+            },
+            "2024": {
+              "return_pct": 1.97,
+              "max_dd_pct": 2.35,
+              "worst_day_pct": 0.98,
+              "trades": 13.0
+            },
+            "2025": {
+              "return_pct": -1.16,
+              "max_dd_pct": 2.41,
+              "worst_day_pct": 0.4,
+              "trades": 13.0
+            },
+            "2026": {
+              "return_pct": -1.11,
+              "max_dd_pct": 1.29,
+              "worst_day_pct": 0.27,
+              "trades": 9.0
+            }
+          },
+          "engine_stats": {
+            "IBS": {
+              "trades": 38.0,
+              "win_rate_pct": 55.26,
+              "net_pnl": -72.09,
+              "pf": 0.91,
+              "avg_hold": 3.32,
+              "swap_paid": 33.51
+            },
+            "TREND": {
+              "trades": 59.0,
+              "win_rate_pct": 27.12,
+              "net_pnl": 4199.05,
+              "pf": 2.11,
+              "avg_hold": 10.29,
+              "swap_paid": 256.04
+            }
+          },
+          "stock_stats": {
+            "TSLA": {
+              "trades": 97.0,
+              "win_rate_pct": 38.14,
+              "net_pnl": 4126.96,
+              "pf": 1.9,
+              "avg_hold": 7.56,
+              "swap_paid": 289.55
+            }
+          }
+        },
+        "ORCL": {
+          "start_date": "2017-09-20",
+          "end_date": "2026-11-23",
+          "final_equity": 24534.82,
+          "total_return_pct": -1.86,
+          "cagr_pct": -0.2,
+          "max_equity_dd_pct": 5.09,
+          "max_close_dd_pct": 5.08,
+          "worst_day_dd_pct": 1.42,
+          "calmar": -0.04,
+          "sharpe": -0.14,
+          "sortino": -0.11,
+          "profit_factor": 0.82,
+          "win_rate_pct": 45.05,
+          "avg_hold_days": 10.27,
+          "trades": 91,
+          "total_swap_paid": 318.65,
+          "total_costs_paid": 130.68,
+          "avg_leverage": 0.021,
+          "max_leverage_seen": 0.248,
+          "dd_kill_switches": 0,
+          "daily_halts": 0,
+          "yearly_stats": {
+            "2017": {
+              "return_pct": -1.93,
+              "max_dd_pct": 2.16,
+              "worst_day_pct": 1.42,
+              "trades": 4.0
+            },
+            "2018": {
+              "return_pct": -1.49,
+              "max_dd_pct": 2.89,
+              "worst_day_pct": 0.56,
+              "trades": 11.0
+            },
+            "2019": {
+              "return_pct": -0.67,
+              "max_dd_pct": 1.61,
+              "worst_day_pct": 0.48,
+              "trades": 11.0
+            },
+            "2020": {
+              "return_pct": -0.37,
+              "max_dd_pct": 0.6,
+              "worst_day_pct": 0.17,
+              "trades": 16.0
+            },
+            "2021": {
+              "return_pct": -0.06,
+              "max_dd_pct": 0.82,
+              "worst_day_pct": 0.32,
+              "trades": 15.0
+            },
+            "2022": {
+              "return_pct": -0.09,
+              "max_dd_pct": 0.15,
+              "worst_day_pct": 0.04,
+              "trades": 3.0
+            },
+            "2023": {
+              "return_pct": 0.17,
+              "max_dd_pct": 1.34,
+              "worst_day_pct": 0.23,
+              "trades": 13.0
+            },
+            "2024": {
+              "return_pct": -0.51,
+              "max_dd_pct": 0.93,
+              "worst_day_pct": 0.43,
+              "trades": 10.0
+            },
+            "2025": {
+              "return_pct": 2.38,
+              "max_dd_pct": 1.63,
+              "worst_day_pct": 0.56,
+              "trades": 7.0
+            },
+            "2026": {
+              "return_pct": 0.75,
+              "max_dd_pct": 0.72,
+              "worst_day_pct": 0.43,
+              "trades": 1.0
+            }
+          },
+          "engine_stats": {
+            "IBS": {
+              "trades": 31.0,
+              "win_rate_pct": 74.19,
+              "net_pnl": 62.81,
+              "pf": 1.18,
+              "avg_hold": 3.1,
+              "swap_paid": 23.96
+            },
+            "TREND": {
+              "trades": 60.0,
+              "win_rate_pct": 30.0,
+              "net_pnl": -527.99,
+              "pf": 0.77,
+              "avg_hold": 13.98,
+              "swap_paid": 294.69
+            }
+          },
+          "stock_stats": {
+            "ORCL": {
+              "trades": 91.0,
+              "win_rate_pct": 45.05,
+              "net_pnl": -465.18,
+              "pf": 0.82,
+              "avg_hold": 10.27,
+              "swap_paid": 318.65
+            }
+          }
+        },
+        "NFLX": {
+          "start_date": "2017-09-20",
+          "end_date": "2026-11-23",
+          "final_equity": 25715.67,
+          "total_return_pct": 2.86,
+          "cagr_pct": 0.31,
+          "max_equity_dd_pct": 4.65,
+          "max_close_dd_pct": 4.62,
+          "worst_day_dd_pct": 1.37,
+          "calmar": 0.07,
+          "sharpe": 0.2,
+          "sortino": 0.15,
+          "profit_factor": 1.24,
+          "win_rate_pct": 46.48,
+          "avg_hold_days": 12.37,
+          "trades": 71,
+          "total_swap_paid": 379.35,
+          "total_costs_paid": 102.56,
+          "avg_leverage": 0.024,
+          "max_leverage_seen": 0.194,
+          "dd_kill_switches": 0,
+          "daily_halts": 0,
+          "yearly_stats": {
+            "2017": {
+              "return_pct": -1.77,
+              "max_dd_pct": 2.05,
+              "worst_day_pct": 0.86,
+              "trades": 6.0
+            },
+            "2018": {
+              "return_pct": 4.94,
+              "max_dd_pct": 2.73,
+              "worst_day_pct": 1.37,
+              "trades": 12.0
+            },
+            "2019": {
+              "return_pct": -1.83,
+              "max_dd_pct": 2.12,
+              "worst_day_pct": 0.92,
+              "trades": 5.0
+            },
+            "2020": {
+              "return_pct": 0.32,
+              "max_dd_pct": 0.91,
+              "worst_day_pct": 0.31,
+              "trades": 14.0
+            },
+            "2021": {
+              "return_pct": 0.25,
+              "max_dd_pct": 0.81,
+              "worst_day_pct": 0.19,
+              "trades": 8.0
+            },
+            "2022": {
+              "return_pct": -0.06,
+              "max_dd_pct": 0.09,
+              "worst_day_pct": 0.08,
+              "trades": 1.0
+            },
+            "2023": {
+              "return_pct": 0.81,
+              "max_dd_pct": 1.55,
+              "worst_day_pct": 0.61,
+              "trades": 8.0
+            },
+            "2024": {
+              "return_pct": 2.96,
+              "max_dd_pct": 1.38,
+              "worst_day_pct": 0.76,
+              "trades": 5.0
+            },
+            "2025": {
+              "return_pct": -2.39,
+              "max_dd_pct": 2.44,
+              "worst_day_pct": 1.05,
+              "trades": 11.0
+            },
+            "2026": {
+              "return_pct": -0.17,
+              "max_dd_pct": 0.56,
+              "worst_day_pct": 0.56,
+              "trades": 1.0
+            }
+          },
+          "engine_stats": {
+            "IBS": {
+              "trades": 24.0,
+              "win_rate_pct": 70.83,
+              "net_pnl": -70.64,
+              "pf": 0.84,
+              "avg_hold": 2.12,
+              "swap_paid": 15.22
+            },
+            "TREND": {
+              "trades": 47.0,
+              "win_rate_pct": 34.04,
+              "net_pnl": 786.31,
+              "pf": 1.3,
+              "avg_hold": 17.6,
+              "swap_paid": 364.14
+            }
+          },
+          "stock_stats": {
+            "NFLX": {
+              "trades": 71.0,
+              "win_rate_pct": 46.48,
+              "net_pnl": 715.67,
+              "pf": 1.24,
+              "avg_hold": 12.37,
+              "swap_paid": 379.35
+            }
+          }
+        },
+        "COST": {
+          "start_date": "2017-09-20",
+          "end_date": "2026-11-23",
+          "final_equity": 27504.44,
+          "total_return_pct": 10.02,
+          "cagr_pct": 1.05,
+          "max_equity_dd_pct": 3.41,
+          "max_close_dd_pct": 3.34,
+          "worst_day_dd_pct": 0.8,
+          "calmar": 0.31,
+          "sharpe": 0.62,
+          "sortino": 0.58,
+          "profit_factor": 1.6,
+          "win_rate_pct": 43.48,
+          "avg_hold_days": 12.11,
+          "trades": 92,
+          "total_swap_paid": 971.72,
+          "total_costs_paid": 264.28,
+          "avg_leverage": 0.059,
+          "max_leverage_seen": 0.258,
+          "dd_kill_switches": 0,
+          "daily_halts": 0,
+          "yearly_stats": {
+            "2017": {
+              "return_pct": 2.33,
+              "max_dd_pct": 0.95,
+              "worst_day_pct": 0.53,
+              "trades": 3.0
+            },
+            "2018": {
+              "return_pct": 0.96,
+              "max_dd_pct": 1.86,
+              "worst_day_pct": 0.69,
+              "trades": 12.0
+            },
+            "2019": {
+              "return_pct": -0.67,
+              "max_dd_pct": 1.64,
+              "worst_day_pct": 0.59,
+              "trades": 10.0
+            },
+            "2020": {
+              "return_pct": -0.59,
+              "max_dd_pct": 1.19,
+              "worst_day_pct": 0.43,
+              "trades": 16.0
+            },
+            "2021": {
+              "return_pct": 4.41,
+              "max_dd_pct": 1.27,
+              "worst_day_pct": 0.53,
+              "trades": 8.0
+            },
+            "2022": {
+              "return_pct": -0.83,
+              "max_dd_pct": 0.83,
+              "worst_day_pct": 0.29,
+              "trades": 5.0
+            },
+            "2023": {
+              "return_pct": 1.08,
+              "max_dd_pct": 1.83,
+              "worst_day_pct": 0.63,
+              "trades": 11.0
+            },
+            "2024": {
+              "return_pct": 2.63,
+              "max_dd_pct": 1.9,
+              "worst_day_pct": 0.8,
+              "trades": 12.0
+            },
+            "2025": {
+              "return_pct": -0.16,
+              "max_dd_pct": 2.14,
+              "worst_day_pct": 0.53,
+              "trades": 9.0
+            },
+            "2026": {
+              "return_pct": 0.57,
+              "max_dd_pct": 1.42,
+              "worst_day_pct": 0.28,
+              "trades": 6.0
+            }
+          },
+          "engine_stats": {
+            "IBS": {
+              "trades": 32.0,
+              "win_rate_pct": 68.75,
+              "net_pnl": 210.5,
+              "pf": 1.41,
+              "avg_hold": 2.75,
+              "swap_paid": 44.44
+            },
+            "TREND": {
+              "trades": 60.0,
+              "win_rate_pct": 30.0,
+              "net_pnl": 1962.54,
+              "pf": 1.63,
+              "avg_hold": 17.1,
+              "swap_paid": 900.26
+            }
+          },
+          "stock_stats": {
+            "COST": {
+              "trades": 92.0,
+              "win_rate_pct": 43.48,
+              "net_pnl": 2173.05,
+              "pf": 1.6,
+              "avg_hold": 12.11,
+              "swap_paid": 944.7
+            }
+          }
+        }
+      }
+    }
+  }
+}
